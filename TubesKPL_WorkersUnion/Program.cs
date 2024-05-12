@@ -1,6 +1,12 @@
-﻿using TubesKPL_WorkersUnion;
+﻿using System;
 
 namespace TubesKPL_WorkersUnion
 {
-    public class Pengguna
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
 }
