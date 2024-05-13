@@ -10,7 +10,7 @@ namespace TubesKPL_WorkersUnion
     public class LoginConfig
     {
         public Config ListPengguna;
-        private const string filepath = @"login_convig.json";
+        private const string filepath = @"login_config.json";
         public LoginConfig()
         {
             ListPengguna = new Config();

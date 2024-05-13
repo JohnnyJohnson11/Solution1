@@ -16,12 +16,12 @@ namespace TubesKPL_WorkersUnion
         public string fullname { get; set; }
         public Perusahaan perusahaan { get; set; }
         public Pekerja pekerja { get; set; }
-        public Pengguna(string uname, string pword)
+        public Pengguna(string username, string password)
         {
-            username = uname;
-            password = pword;
-            perusahaan = new Perusahaan();
-            pekerja = new Pekerja();
+            this.username = username;
+            this.password = password;
+            this.perusahaan = new Perusahaan();
+            this.pekerja = new Pekerja();
         }
     }
 }
@@ -37,11 +37,11 @@ public class Perusahaan
     public Perusahaan()
     {
         Random rnd = new Random();
-        idPerusahaan = "PR" + rnd.Next(1000000, 2000000).ToString();
-        rating = 0;
-        jumlahEmployee = 0;
-        lamaranDiterima = new List<Lamaran>();
-        postinganPekerjaan = new List<Pekerjaan>();
+        this.idPerusahaan = "PR" + rnd.Next(1000000, 2000000).ToString();
+        this.rating = 0;
+        this.jumlahEmployee = 0;
+        this.lamaranDiterima = new List<Lamaran>();
+        this.postinganPekerjaan = new List<Pekerjaan>();
     }
 }
 public class Pekerja
@@ -52,8 +52,8 @@ public class Pekerja
     public Pekerja()
     {
         Random rnd = new Random();
-        idPekerja = "PK" + rnd.Next(1000000, 2000000).ToString();
-        lamaranDikirim = new List<Lamaran>();
+        this.idPekerja = "PK" + rnd.Next(1000000, 2000000).ToString();
+        this.lamaranDikirim = new List<Lamaran>();
     }
 }
 
@@ -63,10 +63,10 @@ public class Lamaran
     public string idPerusahaan { get; set; }
     public CV cv { get; set; }
     public string statusLamaran { get; set; }
-    public Lamaran(string IdPekerja, string IdPerusahaan)
+    public Lamaran(string idPekerja, string idPerusahaan)
     {
-        idPekerja = IdPekerja;
-        idPerusahaan = IdPerusahaan;
+        this.idPekerja = idPekerja;
+        this.idPerusahaan = idPerusahaan;
     }
 }
 
@@ -83,7 +83,7 @@ public class CV
     public string deskripsi { get; set; }
     public CV(string Deskripsi)
     {
-        deskripsi = Deskripsi;
+        this.deskripsi = Deskripsi;
     }
 }
 
@@ -92,7 +92,7 @@ public class Config
     public List<Pengguna> pengguna { get; set; }
     public Config()
     {
-        pengguna = new List<Pengguna>();
+        this.pengguna = new List<Pengguna>();
     }
 }
 

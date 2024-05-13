@@ -16,7 +16,7 @@ namespace TubesKPL_WorkersUnion
         }
         public void ProcessChar(List<Lamaran> lamaranDikirim)
         {
-            int num;
+            int num=0;
             switch (currentState)
             {
                 case State.unemployed:

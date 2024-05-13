@@ -7,24 +7,24 @@ using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
 using System.Text.Json;
 using System.Threading.Tasks;
 using TubesKPL_WorkersUnion;
 
 namespace TubesKPL_Kelompok8
 {
-    internal class UnggahJasaConfig
+    internal class UnggahPekerjaanConfig
     {
-        private const string filepath = @"login_convig.json";
+        private const string filepath = @"login_config.json";
         public Config listPengguna;
 
-        public UnggahJasaConfig()
+        public UnggahPekerjaanConfig()
         {
-            listPengguna = ReadKonfigFile<Config>();
+            listPengguna = ReadConfigFile<Config>();
         }
 
-        public U ReadKonfigFile<U>()
+        public U ReadConfigFile<U>()
         {
             string hasilBaca = File.ReadAllText(filepath);
             return JsonSerializer.Deserialize<U>(hasilBaca);
@@ -52,7 +52,7 @@ namespace TubesKPL_Kelompok8
 
         public void TambahData(string username, string idPerusahaan, string DeskripsiPekerjaan) 
         {
-            Config obj = ReadKonfigFile<Config>();
+            Config obj = ReadConfigFile<Config>();
             for (int i = 0; i < obj.pengguna.Count; i++)
             {
                 if (obj.pengguna[i].username == username)
@@ -68,7 +68,7 @@ namespace TubesKPL_Kelompok8
 
         public void HapusData(string username, string idPekerjaan)
         {
-            Config obj = ReadKonfigFile<Config>();
+            Config obj = ReadConfigFile<Config>();
             Pekerjaan PekerjaanTemu = new Pekerjaan();
             for (int i = 0; i < obj.pengguna.Count; i++)
             {
@@ -101,9 +101,9 @@ namespace TubesKPL_Kelompok8
             }
         }
 
-        public Pengguna SearchAkun(string username)
+        public Pengguna SearchPengguna(string username)
         {
-            Config obj = ReadKonfigFile<Config>();
+            Config obj = ReadConfigFile<Config>();
             foreach (Pengguna pengguna in obj.pengguna)
             {
                 if (pengguna.username == username)
@@ -116,7 +116,7 @@ namespace TubesKPL_Kelompok8
 
         public void Register(string fullname, string username, string email, string password)
         {
-            Config obj = ReadKonfigFile<Config>();
+            Config obj = ReadConfigFile<Config>();
             Pengguna penggunaBaru = new Pengguna(username, password);
             penggunaBaru.fullname = fullname;
             penggunaBaru.email = email;
