@@ -56,7 +56,7 @@ namespace TubesKPL_Kelompok8
             for (int i = 0; i < obj.pengguna.Count; i++)
             {
                 if (obj.pengguna[i].username == username)
-                {
+                {  
                     Pekerjaan dataPekerjaan = new Pekerjaan();
                     dataPekerjaan = BuatDataPekerjaan(idPerusahaan, DeskripsiPekerjaan);
                     obj.pengguna[i].perusahaan.postinganPekerjaan.Add(dataPekerjaan);
