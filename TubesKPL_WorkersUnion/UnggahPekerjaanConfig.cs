@@ -12,9 +12,9 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using TubesKPL_WorkersUnion;
 
-namespace TubesKPL_Kelompok8
+namespace TubesKPL_WorkersUnion
 {
-    internal class UnggahPekerjaanConfig
+    public class UnggahPekerjaanConfig
     {
         private const string filepath = @"login_config.json";
         public Config listPengguna;

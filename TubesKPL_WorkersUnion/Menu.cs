@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-using TubesKPL_Kelompok8;
+using TubesKPL_WorkersUnion;
+using UtilityLibraries;
 
-namespace TubesKPL_WorkersUnion
+namespace UtilityLibraries
 {
-    class Program
+    public static class InterfaceMenu
     {
-        static void Main(string[] args)
+        public static void Function1()
         {
             Console.WriteLine("1. Login");
             Console.WriteLine("2. Register");
             Console.WriteLine("0. Keluar");
-            string input=Console.ReadLine();
+            string input = Console.ReadLine();
             while (input != "0")
             {
                 if (input == "1")
@@ -42,8 +43,9 @@ namespace TubesKPL_WorkersUnion
                         }
                     }
 
-                    
-                } else if (input == "2")
+
+                }
+                else if (input == "2")
                 {
                     Console.WriteLine("Full name: ");
                     string fullname = Console.ReadLine();
@@ -72,7 +74,7 @@ namespace TubesKPL_WorkersUnion
                         }
                     }
                     UnggahPekerjaanConfig config = new UnggahPekerjaanConfig();
-                    config.Register(fullname,username,email,password);
+                    config.Register(fullname, username, email, password);
                     Console.WriteLine("Akun Terdaftar");
                 }
                 Console.WriteLine("1. Login");
