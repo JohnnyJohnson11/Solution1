@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using TubesKPL_Kelompok8;
+using TubesKPL_WorkersUnion;
+using UtilityLibraries;
 
-namespace menu
+namespace UtilityLibraries
 {
-    class Class1 {
-        public void menu()
+    public static class InterfaceMenu
+    {
+        public static void Function1()
         {
             Console.WriteLine("1. Login");
             Console.WriteLine("2. Register");
