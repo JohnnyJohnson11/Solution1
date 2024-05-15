@@ -8,38 +8,49 @@ namespace TubesKPL_WorkersUnion
 {
     public class AturPekerja
     {
-        private List<Pengguna> daftarPengguna;
+        private Dictionary<string, Pekerja> daftarPekerja;
 
         public AturPekerja()
         {
-            daftarPengguna = new List<Pengguna>();
+            daftarPekerja = new Dictionary<string, Pekerja>();
         }
 
-        public void TambahPengguna(Pengguna pengguna)
+        public void TambahPekerja(string id, string nama, string posisi)
         {
-            daftarPengguna.Add(pengguna);
+            daftarPekerja[id] = new Pekerja(nama, posisi);
         }
 
-        public Pengguna CariPengguna(string username)
+        public void HapusPekerja(string id)
         {
-            return daftarPengguna.FirstOrDefault(p => p.username == username);
-        }
-
-        public void HapusPengguna(string username)
-        {
-            Pengguna pengguna = CariPengguna(username);
-            if (pengguna != null)
+            if (daftarPekerja.ContainsKey(id))
             {
-                daftarPengguna.Remove(pengguna);
+                daftarPekerja.Remove(id);
+            }
+            else
+            {
+                Console.WriteLine($"Pekerja dengan ID {id} tidak ditemukan.");
             }
         }
 
-        public void TampilkanSemuaPengguna()
+        public void TampilkanPekerja()
         {
-            foreach (var pengguna in daftarPengguna)
+            Console.WriteLine("Daftar Pekerja:");
+            foreach (var pekerja in daftarPekerja.Values)
             {
-                Console.WriteLine($"Username: {pengguna.username}, Full Name: {pengguna.fullname}");
+                Console.WriteLine($"- {pekerja.Nama}, {pekerja.Posisi}");
             }
+        }
+    }
+
+    public class Pekerja
+    {
+        public string Nama { get; set; }
+        public string Posisi { get; set; }
+
+        public Pekerja(string nama, string posisi)
+        {
+            Nama = nama;
+            Posisi = posisi;
         }
     }
 }
