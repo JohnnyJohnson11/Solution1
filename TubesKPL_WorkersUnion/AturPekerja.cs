@@ -4,53 +4,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TubesKPL_WorkersUnion
+namespace TubesKPL_Kelompok8
 {
-    public class AturPekerja
+    public class AturGajiPekerjaan
     {
-        private Dictionary<string, Pekerja> daftarPekerja;
+        public enum JenisPekerjaan { TidakDiketahui }
 
-        public AturPekerja()
-        {
-            daftarPekerja = new Dictionary<string, Pekerja>();
-        }
+        private static Dictionary<JenisPekerjaan, double> gajiPerJenis = new Dictionary<JenisPekerjaan, double>();
 
-        public void TambahPekerja(string id, string nama, string posisi)
+        public static void TambahGaji(string jenis, double gaji)
         {
-            daftarPekerja[id] = new Pekerja(nama, posisi);
-        }
-
-        public void HapusPekerja(string id)
-        {
-            if (daftarPekerja.ContainsKey(id))
+            JenisPekerjaan jenisPekerjaan;
+            if (!Enum.TryParse(jenis, out jenisPekerjaan))
             {
-                daftarPekerja.Remove(id);
+                Console.WriteLine($"Gagal menambahkan gaji: {jenis} bukan jenis pekerjaan yang valid.");
+                return;
+            }
+
+            if (gajiPerJenis.ContainsKey(jenisPekerjaan))
+            {
+                Console.WriteLine($"Gaji untuk jenis pekerjaan {jenis} sudah ada dalam daftar.");
             }
             else
             {
-                Console.WriteLine($"Pekerja dengan ID {id} tidak ditemukan.");
+                gajiPerJenis.Add(jenisPekerjaan, gaji);
+                Console.WriteLine($"Gaji untuk jenis pekerjaan {jenis} berhasil ditambahkan.");
             }
         }
 
-        public void TampilkanPekerja()
+        public static double DapatkanGaji(string jenis)
         {
-            Console.WriteLine("Daftar Pekerja:");
-            foreach (var pekerja in daftarPekerja.Values)
+            JenisPekerjaan jenisPekerjaan;
+            if (!Enum.TryParse(jenis, out jenisPekerjaan))
             {
-                Console.WriteLine($"- {pekerja.Nama}, {pekerja.Posisi}");
+                Console.WriteLine($"Gagal mendapatkan gaji: {jenis} bukan jenis pekerjaan yang valid.");
+                return 0;
             }
-        }
-    }
 
-    public class Pekerja
-    {
-        public string Nama { get; set; }
-        public string Posisi { get; set; }
-
-        public Pekerja(string nama, string posisi)
-        {
-            Nama = nama;
-            Posisi = posisi;
+            if (gajiPerJenis.ContainsKey(jenisPekerjaan))
+            {
+                return gajiPerJenis[jenisPekerjaan];
+            }
+            else
+            {
+                Console.WriteLine($"Gaji untuk jenis pekerjaan {jenis} tidak ditemukan.");
+                return 0;
+            }
         }
     }
 }
