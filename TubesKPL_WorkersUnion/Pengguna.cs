@@ -34,6 +34,7 @@ public class Perusahaan
     public List<Lamaran> lamaranDiterima { get; set; }
     public string profilPerusahaan { get; set; }
     public List<Pekerjaan> postinganPekerjaan { get; set; }
+    public int[] lokasi {  get; set; }
     public Perusahaan()
     {
         Random rnd = new Random();
@@ -42,6 +43,9 @@ public class Perusahaan
         this.jumlahEmployee = 0;
         this.lamaranDiterima = new List<Lamaran>();
         this.postinganPekerjaan = new List<Pekerjaan>();
+        this.lokasi = new int[2];
+        this.lokasi[0]=-1;
+        this.lokasi[1]=-1;
     }
 }
 public class Pekerja

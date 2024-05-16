@@ -97,5 +97,30 @@ namespace UtilityLibraries
             pekerja1.lamaranDikirim.Add(lamaran);
             statusPekerja.ProcessChar(pekerja1.lamaranDikirim);
         }
+        public static void inputLokasiPerusahaan()
+        {
+            int i = 1;
+            Lokasi lokasi= new Lokasi();
+            Console.WriteLine("Provinsi: ");
+            foreach (string lokasiPerusahaan in Enum.GetNames(typeof(Lokasi.Provinsi)))
+            {
+                Console.WriteLine(i+". "+lokasiPerusahaan);
+                i++;
+            }
+            Console.WriteLine("Pilih provinsi perusahaan anda berasal:");
+            int inputProvinsi = Convert.ToInt32(Console.ReadLine());
+            int j = 1;
+            Console.WriteLine("Kota: ");
+            foreach (string kota in Lokasi.getKota(inputProvinsi-1))
+            {
+                Console.WriteLine(j + ". " + kota);
+                j++;
+            }
+            Console.WriteLine("Pilih kota perusahaan anda berasal:");
+            int inputKota = Convert.ToInt32(Console.ReadLine());
+            Perusahaan perusahaan = new Perusahaan();
+            perusahaan.lokasi = new int[] { inputProvinsi-1, inputKota-1 };
+            Console.WriteLine("Perusahaan anda berada di Provinsi "+ Enum.GetName(typeof(Lokasi.Provinsi), inputProvinsi - 1) + " kota "+ Lokasi.getKota(inputProvinsi - 1)[inputKota-1]);
+        }
     }
 }
