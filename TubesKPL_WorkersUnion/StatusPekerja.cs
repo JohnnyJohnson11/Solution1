@@ -29,6 +29,8 @@ namespace TubesKPL_WorkersUnion
                     if (lamaranDikirim[num].statusLamaran == "diterima")
                     {
                         currentState=State.employed;
+                        checkStatus();
+                        break;
                     } else
                     {
                         for (int i = 0; i < lamaranDikirim.Count && lamaranDikirim[i].statusLamaran != "pending"; i++)
@@ -38,13 +40,16 @@ namespace TubesKPL_WorkersUnion
                         if (lamaranDikirim[num].statusLamaran == "pending")
                         {
                             currentState=State.searching;
+                            checkStatus();
+                            break;
                         }
                         else
                         {
                             currentState = State.unemployed;
+                            checkStatus();
+                            break;
                         }
                     }
-                    break;
                 case State.searching:
                     for (int i = 0; i < lamaranDikirim.Count && lamaranDikirim[i].statusLamaran != "diterima"; i++)
                     {
@@ -53,39 +58,27 @@ namespace TubesKPL_WorkersUnion
                     if (lamaranDikirim[num].statusLamaran == "diterima")
                     {
                         currentState = State.employed;
+                        checkStatus();
+                        break;
                     }
-                    else
-                    {
-                        for (int i = 0; i < lamaranDikirim.Count && lamaranDikirim[i].statusLamaran != "pending"; i++)
-                        {
-                            num = i;
-                        }
-                        if (lamaranDikirim[num].statusLamaran == "pending")
-                        {
-                            currentState = State.searching;
-                        }
-                        else
-                        {
-                            currentState = State.unemployed;
-                        }
-                    }
+                    checkStatus();
                     break;
             }
         }
-        public string IsAccepted()
+        public void checkStatus()
         {
             if (currentState == State.employed)
             {
-                return "Pekerja sudah diterima";
+                Console.WriteLine("Pekerja sudah diterima");
             } else if (currentState == State.searching)
             {
-                return "Pekerja masih mencari pekerjaan";
+                Console.WriteLine("Pekerja masih mencari pekerjaan");
             } else if (currentState == State.unemployed)
             {
-                return "Tidak sedang mencari pekerjaan";
+                Console.WriteLine("Tidak sedang mencari pekerjaan");
             } else
             {
-                return "";
+                Console.WriteLine();
             }
         }
 
