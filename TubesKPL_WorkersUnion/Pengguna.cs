@@ -95,7 +95,3 @@ public class Config
         this.pengguna = new List<Pengguna>();
     }
 }
-
-//test123
-
-//test321
