@@ -7,6 +7,7 @@ namespace TubesKPL_WorkersUnion
     {
         public static void Main(string[] args)
         {
+            InterfaceMenu.automataTesting();
             InterfaceMenu.Function1();
         }
     }

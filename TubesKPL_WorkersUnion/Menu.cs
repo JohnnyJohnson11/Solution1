@@ -83,5 +83,19 @@ namespace UtilityLibraries
                 input = Console.ReadLine();
             }
         }
+        public static void automataTesting()
+        {
+            StatusPekerja statusPekerja= new StatusPekerja();
+            Pekerja pekerja1 = new Pekerja();
+
+            Lamaran lamaran = new Lamaran(pekerja1.idPekerja, "PR1392324");
+            lamaran.statusLamaran = "ditolak";
+            pekerja1.lamaranDikirim.Add(lamaran);
+            lamaran.statusLamaran = "ditolak";
+            pekerja1.lamaranDikirim.Add(lamaran);
+            lamaran.statusLamaran = "diterima";
+            pekerja1.lamaranDikirim.Add(lamaran);
+            statusPekerja.ProcessChar(pekerja1.lamaranDikirim);
+        }
     }
 }
