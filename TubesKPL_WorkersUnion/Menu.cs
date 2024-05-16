@@ -42,8 +42,6 @@ namespace UtilityLibraries
                             Console.WriteLine("Email atau Password salah");
                         }
                     }
-
-
                 }
                 else if (input == "2")
                 {
