@@ -44,23 +44,6 @@ namespace TubesKPL_WorkersUnion
 
         public Pekerjaan BuatDataPekerjaan(string idPerusahaan, string DeskripsiPekerjaan)
         {
-            double gaji;
-
-            try
-            {
-                AturGajiPekerjaan.JenisPekerjaan jenisEnum = (AturGajiPekerjaan.JenisPekerjaan)Enum.Parse(typeof(AturGajiPekerjaan.JenisPekerjaan), DeskripsiPekerjaan);
-                string jenis = jenisEnum.ToString();
-
-                gaji = 1000;
-
-                AturGajiPekerjaan.UpdateGaji(jenis, gaji);
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-                gaji = 0;
-            }
-
             Pekerjaan data = new Pekerjaan();
             Random rnd = new Random();
 

@@ -41,12 +41,12 @@ public class Perusahaan
     public List<Lamaran> lamaranDiterima { get; set; }
     public string profilPerusahaan { get; set; }
     public List<Pekerjaan> postinganPekerjaan { get; set; }
+    public int[] lokasi {  get; set; }
     public string Nama { get; set; }
     public string Email { get; set; }
     public string NomorTelepon { get; set; }
     public string Deskripsi { get; set; }
     public StatusPerusahaan Status { get; set; }
-    public int[] lokasi {  get; set; }
     public Perusahaan()
     {
         Random rnd = new Random();
