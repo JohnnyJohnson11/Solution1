@@ -6,45 +6,53 @@ namespace TubesKPL_WorkersUnion
     public enum StatusPerusahaan
     {
         MemasukkanInfoPerusahaan,
-        Verifikasi,
         Disetujui,
         Ditolak
     }
 
-    public class Perusahaan
+    public class PerusahaanData
     {
         public string Nama { get; set; }
         public string Email { get; set; }
         public string NomorTelepon { get; set; }
-        public string Lokasi { get; set; }
         public string Deskripsi { get; set; }
+        public StatusPerusahaan Status { get; set; }
     }
 
     public class StatusPerusahaanMachine
     {
         private StatusPerusahaan currentState;
-        private List<Perusahaan> daftarPerusahaan;
+        private List<PerusahaanData> daftarPerusahaan;
 
         public StatusPerusahaanMachine()
         {
             currentState = StatusPerusahaan.MemasukkanInfoPerusahaan;
-            daftarPerusahaan = new List<Perusahaan>();
+            daftarPerusahaan = new List<PerusahaanData>();
         }
 
         public void MulaiRegistrasi()
         {
             Console.WriteLine("Memulai registrasi perusahaan. Masukkan informasi perusahaan.");
+            Console.WriteLine("Masukkan Nama Perusahaan: ");
+            string namaPerusahaan = Console.ReadLine();
+            Console.WriteLine("Masukkan Email Perusahaan: ");
+            string emailPerusahaan = Console.ReadLine();
+            Console.WriteLine("Masukkan Nomor Telepon Perusahaan: ");
+            string nomorTeleponPerusahaan = Console.ReadLine();
+            Console.WriteLine("Masukkan Deskripsi Perusahaan: ");
+            string deskripsiPerusahaan = Console.ReadLine();
+            TambahPerusahaan(namaPerusahaan, emailPerusahaan, nomorTeleponPerusahaan, deskripsiPerusahaan);
         }
 
-        public void TambahPerusahaan(string nama, string email, string nomorTelepon, string lokasi, string deskripsi)
+        public void TambahPerusahaan(string nama, string email, string nomorTelepon, string deskripsi)
         {
-            Perusahaan perusahaanBaru = new Perusahaan
+            PerusahaanData perusahaanBaru = new PerusahaanData
             {
                 Nama = nama,
                 Email = email,
                 NomorTelepon = nomorTelepon,
-                Lokasi = lokasi,
-                Deskripsi = deskripsi
+                Deskripsi = deskripsi,
+                Status = StatusPerusahaan.MemasukkanInfoPerusahaan
             };
 
             daftarPerusahaan.Add(perusahaanBaru);
@@ -56,11 +64,12 @@ namespace TubesKPL_WorkersUnion
             var perusahaan = daftarPerusahaan.Find(p => p.Nama == namaPerusahaan);
             if (perusahaan != null)
             {
-                Console.WriteLine($"Perusahaan {namaPerusahaan} berhasil disetujui.");
+                perusahaan.Status = StatusPerusahaan.Disetujui;
+                Console.WriteLine($"Registrasi perusahaan {namaPerusahaan} disetujui.");
             }
             else
             {
-                Console.WriteLine($"Perusahaan {namaPerusahaan} tidak ditemukan.");
+                Console.WriteLine($"Registrasi perusahaan {namaPerusahaan} tidak ditemukan.");
             }
         }
 
@@ -69,11 +78,12 @@ namespace TubesKPL_WorkersUnion
             var perusahaan = daftarPerusahaan.Find(p => p.Nama == namaPerusahaan);
             if (perusahaan != null)
             {
-                Console.WriteLine($"Perusahaan {namaPerusahaan} berhasil ditolak.");
+                perusahaan.Status = StatusPerusahaan.Ditolak;
+                Console.WriteLine($"Registrasi perusahaan {namaPerusahaan} ditolak.");
             }
             else
             {
-                Console.WriteLine($"Perusahaan {namaPerusahaan} tidak ditemukan.");
+                Console.WriteLine($"Registrasi perusahaan {namaPerusahaan} tidak ditemukan.");
             }
         }
 
@@ -82,7 +92,13 @@ namespace TubesKPL_WorkersUnion
             Console.WriteLine("Status Registrasi Perusahaan:");
             foreach (var perusahaan in daftarPerusahaan)
             {
-                Console.WriteLine($"Nama: {perusahaan.Nama}, Status: {(currentState == StatusPerusahaan.Disetujui ? "Disetujui" : (currentState == StatusPerusahaan.Ditolak ? "Ditolak" : "Pending"))}");
+                string statusString = perusahaan.Status switch
+                {
+                    StatusPerusahaan.Disetujui => "Disetujui",
+                    StatusPerusahaan.Ditolak => "Ditolak",
+                    _ => "Pending"
+                };
+                Console.WriteLine($"Nama: {perusahaan.Nama}, Status: {statusString}");
             }
         }
 

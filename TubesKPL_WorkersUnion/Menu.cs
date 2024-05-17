@@ -10,7 +10,7 @@ namespace UtilityLibraries
     {
         public static void Function1()
         {
-            StatusPerusahaan statusPerusahaan = new StatusPerusahaan();
+            StatusPerusahaanMachine statusPerusahaanMachine = new StatusPerusahaanMachine();
 
             Console.WriteLine("1. Login");
             Console.WriteLine("2. Register");
@@ -83,7 +83,8 @@ namespace UtilityLibraries
 
                 else if (input == "4")
                 {
-                    while (true)
+                    bool kelolaBerjalan = true;
+                    while (kelolaBerjalan)
                     {
                         Console.WriteLine("\n1. Mulai Registrasi Perusahaan");
                         Console.WriteLine("2. Setujui Registrasi");
@@ -98,23 +99,27 @@ namespace UtilityLibraries
                         switch (pilihan)
                         {
                             case "1":
-                                statusPerusahaan.MulaiRegistrasi();
+                                statusPerusahaanMachine.MulaiRegistrasi();
                                 break;
                             case "2":
-                                statusPerusahaan.SetujuiRegistrasi();
+                                Console.WriteLine("Masukkan nama perusahaan yang akan disetujui: ");
+                                string namaPerusahaanSetujui = Console.ReadLine();
+                                statusPerusahaanMachine.SetujuiPerusahaan(namaPerusahaanSetujui);
                                 break;
                             case "3":
-                                statusPerusahaan.TolakRegistrasi();
+                                Console.WriteLine("Masukkan nama perusahaan yang akan ditolak: ");
+                                string namaPerusahaanTolak = Console.ReadLine();
+                                statusPerusahaanMachine.TolakPerusahaan(namaPerusahaanTolak);
                                 break;
                             case "4":
-                                statusPerusahaan.TunjukkanStatusRegistrasi();
+                                statusPerusahaanMachine.TunjukkanStatusRegistrasi();
                                 break;
                             case "5":
-                                statusPerusahaan.AturUlang();
-                                Console.WriteLine("Semua status perusahaan telah diatur ulang.");
+                                statusPerusahaanMachine.ResetSemuaStatus();
                                 break;
                             case "0":
-                                return;
+                                kelolaBerjalan = false;
+                                break;
                             default:
                                 Console.WriteLine("Opsi tidak valid. Silakan pilih lagi.");
                                 break;
