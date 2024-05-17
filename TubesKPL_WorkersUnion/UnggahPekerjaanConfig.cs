@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using TubesKPL_WorkersUnion;
+using static TubesKPL_WorkersUnion.AturGajiPekerjaan;
+
 
 namespace TubesKPL_WorkersUnion
 {
@@ -42,16 +44,37 @@ namespace TubesKPL_WorkersUnion
 
         public Pekerjaan BuatDataPekerjaan(string idPerusahaan, string DeskripsiPekerjaan)
         {
+            double gaji;
+
+            try
+            {
+                AturGajiPekerjaan.JenisPekerjaan jenisEnum = (AturGajiPekerjaan.JenisPekerjaan)Enum.Parse(typeof(AturGajiPekerjaan.JenisPekerjaan), DeskripsiPekerjaan);
+                string jenis = jenisEnum.ToString();
+
+                gaji = 1000;
+
+                AturGajiPekerjaan.UpdateGaji(jenis, gaji);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+                gaji = 0;
+            }
+
             Pekerjaan data = new Pekerjaan();
             Random rnd = new Random();
+
             data.idPerusahaan = idPerusahaan;
             data.idPekerjaan = "PKJ" + data.idPerusahaan.Substring(2) + rnd.Next(1000, 2000).ToString();
             data.deskripsiPekerjaan = DeskripsiPekerjaan;
+
             return data;
         }
 
-        public void TambahData(string username, string idPerusahaan, string DeskripsiPekerjaan) 
+
+        public void TambahData(string username, string idPerusahaan, string DeskripsiPekerjaan, string jenis, double gaji) 
         {
+            
             Config obj = ReadConfigFile<Config>();
             for (int i = 0; i < obj.pengguna.Count; i++)
             {
@@ -60,6 +83,7 @@ namespace TubesKPL_WorkersUnion
                     Pekerjaan dataPekerjaan = new Pekerjaan();
                     dataPekerjaan = BuatDataPekerjaan(idPerusahaan, DeskripsiPekerjaan);
                     obj.pengguna[i].perusahaan.postinganPekerjaan.Add(dataPekerjaan);
+                   
                 }
             }
             listPengguna = obj;

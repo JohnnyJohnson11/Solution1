@@ -10,8 +10,12 @@ namespace UtilityLibraries
     {
         public static void Function1()
         {
+            StatusPerusahaanMachine statusPerusahaanMachine = new StatusPerusahaanMachine();
+
             Console.WriteLine("1. Login");
             Console.WriteLine("2. Register");
+            Console.WriteLine("3. Tambah Pekerjaan dan Gaji");
+            Console.WriteLine("4. Kelola Status Registrasi Perusahaan");
             Console.WriteLine("0. Keluar");
             string input = Console.ReadLine();
             while (input != "0")
@@ -42,9 +46,8 @@ namespace UtilityLibraries
                             Console.WriteLine("Email atau Password salah");
                         }
                     }
-
-
                 }
+
                 else if (input == "2")
                 {
                     Console.WriteLine("Full name: ");
@@ -56,11 +59,17 @@ namespace UtilityLibraries
                     Console.WriteLine("Password: ");
                     string password = Console.ReadLine();
                     bool valid = false;
+                    bool semuaAngka = true;
                     while (!valid)
                     {
                         try
                         {
-                            if (int.TryParse(password, out _))
+                            for (int i = 0; i < password.Length-1&&semuaAngka; i++)
+                            {
+                                char c= password[i];
+                                semuaAngka = semuaAngka && int.TryParse(c.ToString(), out _);
+                            }
+                            if (semuaAngka)
                             {
                                 throw new FormatException("Password harus ada huruf");
                             }
@@ -77,8 +86,56 @@ namespace UtilityLibraries
                     config.Register(fullname, username, email, password);
                     Console.WriteLine("Akun Terdaftar");
                 }
+
+                else if (input == "4")
+                {
+                    bool kelolaBerjalan = true;
+                    while (kelolaBerjalan)
+                    {
+                        Console.WriteLine("\n1. Mulai Registrasi Perusahaan");
+                        Console.WriteLine("2. Setujui Registrasi");
+                        Console.WriteLine("3. Tolak Registrasi");
+                        Console.WriteLine("4. Tunjukkan Status Registrasi");
+                        Console.WriteLine("5. Reset Semua Status Perusahaan");
+                        Console.WriteLine("0. Kembali");
+                        Console.Write("Pilih opsi: ");
+
+                        string pilihan = Console.ReadLine();
+
+                        switch (pilihan)
+                        {
+                            case "1":
+                                statusPerusahaanMachine.MulaiRegistrasi();
+                                break;
+                            case "2":
+                                Console.WriteLine("Masukkan nama perusahaan yang akan disetujui: ");
+                                string namaPerusahaanSetujui = Console.ReadLine();
+                                statusPerusahaanMachine.SetujuiPerusahaan(namaPerusahaanSetujui);
+                                break;
+                            case "3":
+                                Console.WriteLine("Masukkan nama perusahaan yang akan ditolak: ");
+                                string namaPerusahaanTolak = Console.ReadLine();
+                                statusPerusahaanMachine.TolakPerusahaan(namaPerusahaanTolak);
+                                break;
+                            case "4":
+                                statusPerusahaanMachine.TunjukkanStatusRegistrasi();
+                                break;
+                            case "5":
+                                statusPerusahaanMachine.ResetSemuaStatus();
+                                break;
+                            case "0":
+                                kelolaBerjalan = false;
+                                break;
+                            default:
+                                Console.WriteLine("Opsi tidak valid. Silakan pilih lagi.");
+                                break;
+                        }
+                    }
+                }
                 Console.WriteLine("1. Login");
                 Console.WriteLine("2. Register");
+                Console.WriteLine("3. Tambah Pekerjaan dan Gaji");
+                Console.WriteLine("4. Kelola Status Registrasi Perusahaan");
                 Console.WriteLine("0. Keluar");
                 input = Console.ReadLine();
             }

@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using TubesKPL_WorkersUnion;
 
+public enum StatusPerusahaan
+{
+    MemasukkanInfoPerusahaan,
+    Disetujui,
+    Ditolak
+}
+
 namespace TubesKPL_WorkersUnion
 {
     public class Pengguna
@@ -34,6 +41,11 @@ public class Perusahaan
     public List<Lamaran> lamaranDiterima { get; set; }
     public string profilPerusahaan { get; set; }
     public List<Pekerjaan> postinganPekerjaan { get; set; }
+    public string Nama { get; set; }
+    public string Email { get; set; }
+    public string NomorTelepon { get; set; }
+    public string Deskripsi { get; set; }
+    public StatusPerusahaan Status { get; set; }
     public int[] lokasi {  get; set; }
     public Perusahaan()
     {
@@ -46,6 +58,19 @@ public class Perusahaan
         this.lokasi = new int[2];
         this.lokasi[0]=-1;
         this.lokasi[1]=-1;
+        this.Nama = "";
+        this.Email = "";
+        this.NomorTelepon = "";
+        this.Deskripsi = "";
+        this.Status = StatusPerusahaan.MemasukkanInfoPerusahaan;
+    }
+    public void TambahDataPerusahaan(string nama, string email, string nomorTelepon, string deskripsi)
+    {
+        this.Nama = nama;
+        this.Email = email;
+        this.NomorTelepon = nomorTelepon;
+        this.Deskripsi = deskripsi;
+        this.Status = StatusPerusahaan.MemasukkanInfoPerusahaan;
     }
 }
 public class Pekerja
@@ -99,7 +124,3 @@ public class Config
         this.pengguna = new List<Pengguna>();
     }
 }
-
-//test123
-
-//test321
