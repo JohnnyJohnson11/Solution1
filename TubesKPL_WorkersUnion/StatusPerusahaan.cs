@@ -1,33 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TubesKPL_WorkersUnion
-{
-    public enum StatusPerusahaan
-    {
-        MemasukkanInfoPerusahaan,
-        Disetujui,
-        Ditolak
-    }
-
-    public class PerusahaanData
-    {
-        public string Nama { get; set; }
-        public string Email { get; set; }
-        public string NomorTelepon { get; set; }
-        public string Deskripsi { get; set; }
-        public StatusPerusahaan Status { get; set; }
-    }
-
+namespace TubesKPL_WorkersUnion {
     public class StatusPerusahaanMachine
     {
+        private Perusahaan perusahaan;
         private StatusPerusahaan currentState;
-        private List<PerusahaanData> daftarPerusahaan;
+        private List<Perusahaan> daftarPerusahaan;
 
         public StatusPerusahaanMachine()
         {
             currentState = StatusPerusahaan.MemasukkanInfoPerusahaan;
-            daftarPerusahaan = new List<PerusahaanData>();
+            daftarPerusahaan = new List<Perusahaan>();
         }
 
         public void MulaiRegistrasi()
@@ -46,15 +30,8 @@ namespace TubesKPL_WorkersUnion
 
         public void TambahPerusahaan(string nama, string email, string nomorTelepon, string deskripsi)
         {
-            PerusahaanData perusahaanBaru = new PerusahaanData
-            {
-                Nama = nama,
-                Email = email,
-                NomorTelepon = nomorTelepon,
-                Deskripsi = deskripsi,
-                Status = StatusPerusahaan.MemasukkanInfoPerusahaan
-            };
-
+            Perusahaan perusahaanBaru = new Perusahaan();
+            perusahaanBaru.TambahDataPerusahaan(nama, email, nomorTelepon, deskripsi);
             daftarPerusahaan.Add(perusahaanBaru);
             Console.WriteLine("Informasi perusahaan berhasil ditambahkan.");
         }
@@ -110,3 +87,4 @@ namespace TubesKPL_WorkersUnion
         }
     }
 }
+

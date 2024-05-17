@@ -59,11 +59,17 @@ namespace UtilityLibraries
                     Console.WriteLine("Password: ");
                     string password = Console.ReadLine();
                     bool valid = false;
+                    bool semuaAngka = true;
                     while (!valid)
                     {
                         try
                         {
-                            if (int.TryParse(password, out _))
+                            for (int i = 0; i < password.Length-1&&semuaAngka; i++)
+                            {
+                                char c= password[i];
+                                semuaAngka = semuaAngka && int.TryParse(c.ToString(), out _);
+                            }
+                            if (semuaAngka)
                             {
                                 throw new FormatException("Password harus ada huruf");
                             }
