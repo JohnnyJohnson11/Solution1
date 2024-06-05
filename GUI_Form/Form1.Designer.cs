@@ -122,6 +122,7 @@
             button1.TabIndex = 8;
             button1.Text = "Masuk";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // pictureBox1
             // 

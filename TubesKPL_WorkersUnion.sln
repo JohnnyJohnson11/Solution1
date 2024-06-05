@@ -5,9 +5,7 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TubesKPL_WorkersUnion", "TubesKPL_WorkersUnion\TubesKPL_WorkersUnion.csproj", "{581E2C67-1B09-43FC-B93A-36DC6CA2CF0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{E139E382-7033-452D-81CC-5E6BB241FECB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI_Form", "GUI_Form\GUI_Form.csproj", "{4CC8CBC5-4D98-4F10-8AD4-3E51B2F91105}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI_Form", "GUI_Form\GUI_Form.csproj", "{4CC8CBC5-4D98-4F10-8AD4-3E51B2F91105}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{581E2C67-1B09-43FC-B93A-36DC6CA2CF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{581E2C67-1B09-43FC-B93A-36DC6CA2CF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{581E2C67-1B09-43FC-B93A-36DC6CA2CF0E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E139E382-7033-452D-81CC-5E6BB241FECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E139E382-7033-452D-81CC-5E6BB241FECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E139E382-7033-452D-81CC-5E6BB241FECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E139E382-7033-452D-81CC-5E6BB241FECB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4CC8CBC5-4D98-4F10-8AD4-3E51B2F91105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4CC8CBC5-4D98-4F10-8AD4-3E51B2F91105}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CC8CBC5-4D98-4F10-8AD4-3E51B2F91105}.Release|Any CPU.ActiveCfg = Release|Any CPU
