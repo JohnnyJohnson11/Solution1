@@ -37,6 +37,8 @@
             textBox1 = new TextBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -44,25 +46,27 @@
             // 
             button1.BackColor = Color.Blue;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(376, 297);
+            button1.Location = new Point(376, 369);
             button1.Name = "button1";
             button1.Size = new Size(247, 29);
             button1.TabIndex = 16;
             button1.Text = "Daftar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.Blue;
             button2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(548, 362);
+            button2.Location = new Point(548, 434);
             button2.Margin = new Padding(0);
             button2.Name = "button2";
             button2.Size = new Size(75, 39);
             button2.TabIndex = 15;
             button2.Text = "Masuk";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label3
             // 
@@ -79,7 +83,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(376, 371);
+            label2.Location = new Point(376, 443);
             label2.Name = "label2";
             label2.Size = new Size(154, 20);
             label2.TabIndex = 13;
@@ -88,7 +92,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(376, 248);
+            textBox2.Location = new Point(376, 320);
             textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(247, 30);
@@ -98,7 +102,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(376, 204);
+            textBox1.Location = new Point(376, 276);
             textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(247, 30);
@@ -126,6 +130,26 @@
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
             // 
+            // textBox3
+            // 
+            textBox3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.Location = new Point(376, 185);
+            textBox3.Margin = new Padding(3, 4, 3, 4);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(247, 30);
+            textBox3.TabIndex = 11;
+            textBox3.Text = "Full name";
+            // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox4.Location = new Point(376, 229);
+            textBox4.Margin = new Padding(3, 4, 3, 4);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(247, 30);
+            textBox4.TabIndex = 12;
+            textBox4.Text = "Username";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -135,7 +159,9 @@
             Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(textBox4);
             Controls.Add(textBox2);
+            Controls.Add(textBox3);
             Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -157,5 +183,7 @@
         private TextBox textBox1;
         private Label label1;
         private PictureBox pictureBox1;
+        private TextBox textBox3;
+        private TextBox textBox4;
     }
 }

@@ -61,7 +61,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(247, 30);
             textBox1.TabIndex = 1;
-            textBox1.Text = "Email";
+            textBox1.Text = "Username";
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
@@ -133,7 +133,7 @@
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
-            // Form1
+            // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -148,7 +148,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Form1";
+            Name = "Login";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
