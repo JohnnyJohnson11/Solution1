@@ -1,6 +1,6 @@
 ﻿namespace GUI_Form
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             label1 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
@@ -46,7 +46,7 @@
             label1.BackColor = Color.LightGray;
             label1.Font = new Font("Times New Roman", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.Sienna;
-            label1.Location = new Point(12, 24);
+            label1.Location = new Point(12, 9);
             label1.Name = "label1";
             label1.Size = new Size(281, 45);
             label1.TabIndex = 0;
@@ -127,9 +127,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, -11);
+            pictureBox1.Location = new Point(0, -4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(978, 574);
+            pictureBox1.Size = new Size(978, 567);
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
