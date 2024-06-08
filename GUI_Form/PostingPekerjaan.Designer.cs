@@ -34,14 +34,17 @@
             label2 = new Label();
             textBox1 = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
             label5 = new Label();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             radioButton3 = new RadioButton();
             button1 = new Button();
+            label6 = new Label();
+            richTextBox1 = new RichTextBox();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -58,7 +61,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 19);
+            label1.Location = new Point(32, 19);
             label1.Name = "label1";
             label1.Size = new Size(227, 23);
             label1.TabIndex = 21;
@@ -88,17 +91,9 @@
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(12, 154);
             label3.Name = "label3";
-            label3.Size = new Size(67, 23);
+            label3.Size = new Size(78, 23);
             label3.TabIndex = 24;
-            label3.Text = "Lokasi";
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(12, 191);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(450, 30);
-            textBox2.TabIndex = 25;
+            label3.Text = "Provinsi";
             // 
             // label4
             // 
@@ -110,19 +105,11 @@
             label4.TabIndex = 26;
             label4.Text = "Deskripsi";
             // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(12, 262);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(450, 30);
-            textBox3.TabIndex = 27;
-            // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(12, 309);
+            label5.Location = new Point(522, 70);
             label5.Name = "label5";
             label5.Size = new Size(48, 23);
             label5.TabIndex = 28;
@@ -132,7 +119,7 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton1.Location = new Point(12, 346);
+            radioButton1.Location = new Point(522, 107);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(131, 26);
             radioButton1.TabIndex = 29;
@@ -145,7 +132,7 @@
             // 
             radioButton2.AutoSize = true;
             radioButton2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton2.Location = new Point(12, 378);
+            radioButton2.Location = new Point(522, 139);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(133, 26);
             radioButton2.TabIndex = 30;
@@ -157,7 +144,7 @@
             // 
             radioButton3.AutoSize = true;
             radioButton3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton3.Location = new Point(12, 410);
+            radioButton3.Location = new Point(522, 171);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(145, 26);
             radioButton3.TabIndex = 31;
@@ -169,6 +156,7 @@
             // 
             button1.BackColor = Color.DodgerBlue;
             button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(816, 478);
             button1.Name = "button1";
             button1.Size = new Size(111, 39);
@@ -176,19 +164,70 @@
             button1.Text = "Konfirmasi";
             button1.UseVisualStyleBackColor = false;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = SystemColors.Desktop;
+            label6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.Transparent;
+            label6.Location = new Point(5, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(21, 23);
+            label6.TabIndex = 35;
+            label6.Text = "<";
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBox1.Location = new Point(12, 265);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(450, 252);
+            richTextBox1.TabIndex = 49;
+            richTextBox1.Text = "";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "NanggroeAcehDarusallam", "SumateraUtara", "SumateraSelatan", "SumateraBarat", "Bengkulu", "Riau", "KepulauanRiau", "Jambi Lampung", "BangkaBelitung", "KalimantanBarat", "KalimantanTimur", "KalimantanSelatan", "KalimantanTengah", "KalimantanUtara", "Banten", "DKIJakarta", "JawaBarat", "JawaTengah", "DaerahIstimewa", "Yogyakarta", "JawaTimur", "Bali", "NusaTenggaraTimur ", "NusaTenggaraBarat", "SulawesiBarat", "SulawesiTengah", "SulawesiUtara", "SulawesiTenggara", "SulawesiSelatan", "MalukuUtara", "Maluku", "Papua" });
+            comboBox1.Location = new Point(12, 190);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 50;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(310, 190);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(151, 28);
+            comboBox2.TabIndex = 52;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(310, 154);
+            label7.Name = "label7";
+            label7.Size = new Size(51, 23);
+            label7.TabIndex = 51;
+            label7.Text = "Kota";
+            // 
             // PostingPekerjaan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(comboBox2);
+            Controls.Add(label7);
+            Controls.Add(comboBox1);
+            Controls.Add(richTextBox1);
+            Controls.Add(label6);
             Controls.Add(button1);
             Controls.Add(radioButton3);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
             Controls.Add(label5);
-            Controls.Add(textBox3);
             Controls.Add(label4);
-            Controls.Add(textBox2);
             Controls.Add(label3);
             Controls.Add(textBox1);
             Controls.Add(label2);
@@ -208,13 +247,16 @@
         private Label label2;
         private TextBox textBox1;
         private Label label3;
-        private TextBox textBox2;
         private Label label4;
-        private TextBox textBox3;
         private Label label5;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private RadioButton radioButton3;
         private Button button1;
+        private Label label6;
+        private RichTextBox richTextBox1;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private Label label7;
     }
 }

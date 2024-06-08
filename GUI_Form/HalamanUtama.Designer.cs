@@ -36,15 +36,15 @@
             label3 = new Label();
             label4 = new Label();
             button2 = new Button();
-            button3 = new Button();
             button4 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-9, -9);
+            pictureBox1.Location = new Point(0, -11);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(978, 574);
             pictureBox1.TabIndex = 18;
@@ -54,11 +54,11 @@
             // 
             button1.BackColor = Color.DarkGray;
             button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(767, 21);
+            button1.Location = new Point(580, 25);
             button1.Name = "button1";
             button1.Size = new Size(181, 36);
             button1.TabIndex = 19;
-            button1.Text = "Posting Pekerjaan";
+            button1.Text = "Profil";
             button1.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -90,7 +90,6 @@
             label3.Size = new Size(297, 23);
             label3.TabIndex = 22;
             label3.Text = "Selamat datang di Workers Union,";
-
             // 
             // label4
             // 
@@ -113,35 +112,35 @@
             button2.Text = "Cari Pekerjaan";
             button2.UseVisualStyleBackColor = false;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.LightCoral;
-            button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(220, 374);
-            button3.Name = "button3";
-            button3.Size = new Size(181, 36);
-            button3.TabIndex = 25;
-            button3.Text = "Kata Kunci";
-            button3.UseVisualStyleBackColor = false;
-            // 
             // button4
             // 
             button4.BackColor = Color.LightCoral;
             button4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(407, 374);
+            button4.Location = new Point(220, 374);
             button4.Name = "button4";
             button4.Size = new Size(181, 36);
             button4.TabIndex = 26;
             button4.Text = "Lokasi";
             button4.UseVisualStyleBackColor = false;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.DarkGray;
+            button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(767, 25);
+            button3.Name = "button3";
+            button3.Size = new Size(181, 36);
+            button3.TabIndex = 27;
+            button3.Text = "Perusahaan";
+            button3.UseVisualStyleBackColor = false;
+            // 
             // HalamanUtama
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
-            Controls.Add(button4);
             Controls.Add(button3);
+            Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -165,7 +164,7 @@
         private Label label3;
         private Label label4;
         private Button button2;
-        private Button button3;
         private Button button4;
+        private Button button3;
     }
 }
