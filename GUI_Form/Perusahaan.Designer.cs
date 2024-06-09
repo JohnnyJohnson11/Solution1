@@ -65,7 +65,6 @@
             label1.Size = new Size(748, 42);
             label1.TabIndex = 21;
             label1.Text = "Temukan orang terbaik untuk lowongan Anda";
-
             // 
             // label2
             // 
@@ -181,6 +180,7 @@
             button3.TabIndex = 31;
             button3.Text = "Iklan pekerjaan terbaru saya";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // Perusahaan
             // 

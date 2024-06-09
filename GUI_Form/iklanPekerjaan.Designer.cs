@@ -116,6 +116,7 @@
             button3.TabIndex = 32;
             button3.Text = "Lihat selengkapnya";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button1
             // 
@@ -127,6 +128,7 @@
             button1.TabIndex = 33;
             button1.Text = "Posting Pekerjaan";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label3
             // 
@@ -139,6 +141,7 @@
             label3.Size = new Size(21, 23);
             label3.TabIndex = 34;
             label3.Text = "<";
+            label3.Click += label3_Click;
             // 
             // iklanPekerjaan
             // 

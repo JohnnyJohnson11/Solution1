@@ -16,5 +16,12 @@ namespace GUI_Form
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Perusahaan halamanPerusahaan = new Perusahaan();
+            halamanPerusahaan.Show();
+            this.Hide();
+        }
     }
 }

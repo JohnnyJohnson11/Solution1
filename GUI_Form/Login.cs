@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TubesKPL_WorkersUnion;
+using UtilityLibraries;
 
 namespace GUI_Form
 {
@@ -74,6 +75,7 @@ namespace GUI_Form
                 {
                     //Pindah ke menu utama
                     found = true;
+                    Logged_In logged_In = Logged_In.GetInstance(loginConfig.ListPengguna.pengguna[i].pekerja.idPekerja, loginConfig.ListPengguna.pengguna[i].perusahaan.idPerusahaan);
                     HalamanUtama halamanUtama = new HalamanUtama();
                     halamanUtama.Show();
                     this.Hide();

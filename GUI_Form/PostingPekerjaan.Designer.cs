@@ -45,6 +45,7 @@
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             label7 = new Label();
+            textBox2 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -119,7 +120,7 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton1.Location = new Point(522, 107);
+            radioButton1.Location = new Point(522, 158);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(131, 26);
             radioButton1.TabIndex = 29;
@@ -132,7 +133,7 @@
             // 
             radioButton2.AutoSize = true;
             radioButton2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton2.Location = new Point(522, 139);
+            radioButton2.Location = new Point(522, 190);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(133, 26);
             radioButton2.TabIndex = 30;
@@ -144,7 +145,7 @@
             // 
             radioButton3.AutoSize = true;
             radioButton3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton3.Location = new Point(522, 171);
+            radioButton3.Location = new Point(522, 222);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(145, 26);
             radioButton3.TabIndex = 31;
@@ -163,6 +164,7 @@
             button1.TabIndex = 32;
             button1.Text = "Konfirmasi";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // label6
             // 
@@ -175,6 +177,7 @@
             label6.Size = new Size(21, 23);
             label6.TabIndex = 35;
             label6.Text = "<";
+            label6.Click += label6_Click;
             // 
             // richTextBox1
             // 
@@ -188,11 +191,12 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "NanggroeAcehDarusallam", "SumateraUtara", "SumateraSelatan", "SumateraBarat", "Bengkulu", "Riau", "KepulauanRiau", "Jambi Lampung", "BangkaBelitung", "KalimantanBarat", "KalimantanTimur", "KalimantanSelatan", "KalimantanTengah", "KalimantanUtara", "Banten", "DKIJakarta", "JawaBarat", "JawaTengah", "DaerahIstimewa", "Yogyakarta", "JawaTimur", "Bali", "NusaTenggaraTimur ", "NusaTenggaraBarat", "SulawesiBarat", "SulawesiTengah", "SulawesiUtara", "SulawesiTenggara", "SulawesiSelatan", "MalukuUtara", "Maluku", "Papua" });
+            comboBox1.Items.AddRange(new object[] { "NanggroeAcehDarusallam", "SumateraUtara", "SumateraSelatan", "SumateraBarat", "Bengkulu", "Riau", "KepulauanRiau", "Jambi", "Lampung", "BangkaBelitung", "KalimantanBarat", "KalimantanTimur", "KalimantanSelatan", "KalimantanTengah", "KalimantanUtara", "Banten", "DKIJakarta", "JawaBarat", "JawaTengah", "DaerahIstimewaYogyakarta", "JawaTimur", "Bali", "NusaTenggaraTimur ", "NusaTenggaraBarat", "SulawesiBarat", "SulawesiTengah", "SulawesiUtara", "SulawesiTenggara", "SulawesiSelatan", "MalukuUtara", "Maluku", "Papua" });
             comboBox1.Location = new Point(12, 190);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 28);
             comboBox1.TabIndex = 50;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // comboBox2
             // 
@@ -212,11 +216,20 @@
             label7.TabIndex = 51;
             label7.Text = "Kota";
             // 
+            // textBox2
+            // 
+            textBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.Location = new Point(522, 106);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(178, 30);
+            textBox2.TabIndex = 53;
+            // 
             // PostingPekerjaan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(textBox2);
             Controls.Add(comboBox2);
             Controls.Add(label7);
             Controls.Add(comboBox1);
@@ -258,5 +271,6 @@
         private ComboBox comboBox1;
         private ComboBox comboBox2;
         private Label label7;
+        private TextBox textBox2;
     }
 }

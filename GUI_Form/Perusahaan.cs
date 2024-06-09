@@ -16,5 +16,13 @@ namespace GUI_Form
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //iklan
+            iklanPekerjaan halamanIklan = new iklanPekerjaan();
+            halamanIklan.Show();
+            this.Hide();
+        }
     }
 }

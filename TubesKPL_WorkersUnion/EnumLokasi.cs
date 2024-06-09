@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TubesKPL_WorkersUnion
 {
-    internal class Lokasi
+    public class Lokasi
     {
         public enum Provinsi { NanggroeAcehDarusallam, SumateraUtara, SumateraSelatan, SumateraBarat, Bengkulu, 
             Riau, KepulauanRiau, Jambi, Lampung, BangkaBelitung, KalimantanBarat, KalimantanTimur, KalimantanSelatan, KalimantanTengah, 

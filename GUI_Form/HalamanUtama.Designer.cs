@@ -133,6 +133,7 @@
             button3.TabIndex = 27;
             button3.Text = "Perusahaan";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // HalamanUtama
             // 

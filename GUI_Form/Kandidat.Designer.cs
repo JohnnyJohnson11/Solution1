@@ -36,8 +36,8 @@
             button3 = new Button();
             button1 = new Button();
             label3 = new Label();
-            listBox2 = new ListBox();
             label4 = new Label();
+            richTextBox1 = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -119,16 +119,6 @@
             label3.TabIndex = 29;
             label3.Text = "Jawaban:";
             // 
-            // listBox2
-            // 
-            listBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 22;
-            listBox2.Location = new Point(216, 124);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(180, 378);
-            listBox2.TabIndex = 30;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -141,15 +131,24 @@
             label4.TabIndex = 35;
             label4.Text = "<";
             // 
+            // richTextBox1
+            // 
+            richTextBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBox1.Location = new Point(216, 124);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(450, 378);
+            richTextBox1.TabIndex = 50;
+            richTextBox1.Text = "";
+            // 
             // Kandidat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(richTextBox1);
             Controls.Add(label4);
             Controls.Add(button1);
             Controls.Add(button3);
-            Controls.Add(listBox2);
             Controls.Add(label3);
             Controls.Add(listBox1);
             Controls.Add(label1);
@@ -171,7 +170,7 @@
         private Button button3;
         private Button button1;
         private Label label3;
-        private ListBox listBox2;
         private Label label4;
+        private RichTextBox richTextBox1;
     }
 }

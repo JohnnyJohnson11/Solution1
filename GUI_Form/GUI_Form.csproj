@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Akun_LoggedIn\Akun_LoggedIn.csproj" />
     <ProjectReference Include="..\TubesKPL_WorkersUnion\TubesKPL_WorkersUnion.csproj" />
   </ItemGroup>
 

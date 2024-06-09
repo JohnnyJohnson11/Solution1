@@ -38,7 +38,6 @@ public class Perusahaan
     public string idPerusahaan { get; set; }
     public float rating { get; set; }
     public int jumlahEmployee { get; set; }
-    public List<Lamaran> lamaranDiterima { get; set; }
     public string profilPerusahaan { get; set; }
     public List<Pekerjaan> postinganPekerjaan { get; set; }
     public int[] lokasi {  get; set; }
@@ -53,7 +52,6 @@ public class Perusahaan
         this.idPerusahaan = "PR" + rnd.Next(1000000, 2000000).ToString();
         this.rating = 0;
         this.jumlahEmployee = 0;
-        this.lamaranDiterima = new List<Lamaran>();
         this.postinganPekerjaan = new List<Pekerjaan>();
         this.lokasi = new int[2];
         this.lokasi[0]=-1;
@@ -88,14 +86,17 @@ public class Pekerja
 
 public class Lamaran
 {
+    public string idLamaran {  get; set; }
     public string idPekerja { get; set; }
-    public string idPerusahaan { get; set; }
-    public CV cv { get; set; }
+    public string idPekerjaan { get; set; }
+    public string idCv { get; set; }
     public string statusLamaran { get; set; }
-    public Lamaran(string idPekerja, string idPerusahaan)
+    public Lamaran(string idPekerja, string idPekerjaan, string idCv)
     {
+        this.idCv = idCv;
         this.idPekerja = idPekerja;
-        this.idPerusahaan = idPerusahaan;
+        this.idPekerjaan = idPekerjaan;
+        this.statusLamaran = "pending";
     }
 }
 
@@ -103,16 +104,27 @@ public class Pekerjaan
 {
     public string idPekerjaan { get; set; }
     public string idPerusahaan { get; set; }
+    public string judulPekerjaan { get; set; }
+    public int[] lokasi { get; set; }
+    public string gaji { get;set; }
     public string deskripsiPekerjaan { get; set; }
+    public List<Lamaran> lamaranDiterima { get; set; }
     public Pekerjaan(){}
 }
 
 public class CV
 {
-    public string deskripsi { get; set; }
-    public CV(string Deskripsi)
+    public string idCv {  get; set; }
+    public string riwayatPendidikan { get; set; }
+    public string riwayatPekerjaan { get; set; }
+    public string skill {  get; set; }
+    public string idPekerja {  get; set; }
+    public CV(string riwayatPendidikan, string riwayatPekerjaan, string skill, string idPekerja)
     {
-        this.deskripsi = Deskripsi;
+        this.riwayatPendidikan = riwayatPendidikan;
+        this.riwayatPekerjaan = riwayatPekerjaan;
+        this.skill = skill;
+        this.idPekerja = idPekerja;
     }
 }
 

@@ -42,29 +42,34 @@ namespace TubesKPL_WorkersUnion
             File.WriteAllText(filepath, tulisan);
         }
 
-        public Pekerjaan BuatDataPekerjaan(string idPerusahaan, string DeskripsiPekerjaan)
+        public Pekerjaan BuatDataPekerjaan(string idPerusahaan, string judulPekerjaan, int[] lokasi,string gaji,string DeskripsiPekerjaan)
         {
             Pekerjaan data = new Pekerjaan();
             Random rnd = new Random();
 
             data.idPerusahaan = idPerusahaan;
             data.idPekerjaan = "PKJ" + data.idPerusahaan.Substring(2) + rnd.Next(1000, 2000).ToString();
+            data.lokasi = new int[2];
+            data.lokasi[0] = lokasi[0];
+            data.lokasi[1] = lokasi[1];
+            data.gaji = gaji;
+            data.judulPekerjaan = judulPekerjaan;
             data.deskripsiPekerjaan = DeskripsiPekerjaan;
 
             return data;
         }
 
 
-        public void TambahData(string username, string idPerusahaan, string DeskripsiPekerjaan, string jenis, double gaji) 
+        public void TambahData(string idPerusahaan, string judulPekerjaan, int[] lokasi, string gaji, string DeskripsiPekerjaan) 
         {
             
             Config obj = ReadConfigFile<Config>();
             for (int i = 0; i < obj.pengguna.Count; i++)
             {
-                if (obj.pengguna[i].username == username)
+                if (obj.pengguna[i].perusahaan.idPerusahaan == idPerusahaan)
                 {  
                     Pekerjaan dataPekerjaan = new Pekerjaan();
-                    dataPekerjaan = BuatDataPekerjaan(idPerusahaan, DeskripsiPekerjaan);
+                    dataPekerjaan = BuatDataPekerjaan(idPerusahaan, judulPekerjaan, lokasi, gaji, DeskripsiPekerjaan);
                     obj.pengguna[i].perusahaan.postinganPekerjaan.Add(dataPekerjaan);
                    
                 }
@@ -73,13 +78,13 @@ namespace TubesKPL_WorkersUnion
             WriteConfigFile();
         }
 
-        public void HapusData(string username, string idPekerjaan)
+        public void HapusData(string idPerusahaan, string idPekerjaan)
         {
             Config obj = ReadConfigFile<Config>();
             Pekerjaan PekerjaanTemu = new Pekerjaan();
             for (int i = 0; i < obj.pengguna.Count; i++)
             {
-                if (obj.pengguna[i].username == username)
+                if (obj.pengguna[i].perusahaan.idPerusahaan == idPerusahaan)
                 {
                     foreach (Pekerjaan pekerjaan in obj.pengguna[i].perusahaan.postinganPekerjaan)
                     {
