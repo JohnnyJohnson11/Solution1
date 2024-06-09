@@ -45,6 +45,7 @@
             // button1
             // 
             button1.BackColor = Color.Blue;
+            button1.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
             button1.Location = new Point(376, 369);
             button1.Name = "button1";
@@ -57,7 +58,7 @@
             // button2
             // 
             button2.BackColor = Color.Blue;
-            button2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = SystemColors.ButtonFace;
             button2.Location = new Point(548, 434);
             button2.Margin = new Padding(0);
@@ -82,16 +83,16 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(376, 443);
             label2.Name = "label2";
-            label2.Size = new Size(154, 20);
+            label2.Size = new Size(134, 19);
             label2.TabIndex = 13;
             label2.Text = "Sudah punya akun?";
             // 
             // textBox2
             // 
-            textBox2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.Location = new Point(376, 320);
             textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
@@ -101,7 +102,7 @@
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.Location = new Point(376, 276);
             textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
@@ -132,7 +133,7 @@
             // 
             // textBox3
             // 
-            textBox3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox3.Location = new Point(376, 185);
             textBox3.Margin = new Padding(3, 4, 3, 4);
             textBox3.Name = "textBox3";
@@ -142,7 +143,7 @@
             // 
             // textBox4
             // 
-            textBox4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox4.Location = new Point(376, 229);
             textBox4.Margin = new Padding(3, 4, 3, 4);
             textBox4.Name = "textBox4";

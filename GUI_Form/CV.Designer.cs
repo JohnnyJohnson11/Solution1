@@ -1,6 +1,6 @@
 ﻿namespace GUI_Form
 {
-    partial class iklanPekerjaan
+    partial class CV
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(iklanPekerjaan));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CV));
             pictureBox1 = new PictureBox();
             label2 = new Label();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label5 = new Label();
+            label3 = new Label();
             label1 = new Label();
-            label4 = new Label();
-            listBox1 = new ListBox();
-            listBox2 = new ListBox();
-            button3 = new Button();
             button1 = new Button();
             button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -47,7 +48,7 @@
             pictureBox1.Location = new Point(-9, -5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(978, 566);
-            pictureBox1.TabIndex = 20;
+            pictureBox1.TabIndex = 37;
             pictureBox1.TabStop = false;
             // 
             // label2
@@ -56,79 +57,77 @@
             label2.BackColor = SystemColors.GrayText;
             label2.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(59, 22);
+            label2.Location = new Point(68, 22);
             label2.Name = "label2";
-            label2.Size = new Size(362, 32);
-            label2.TabIndex = 23;
-            label2.Text = "Iklan pekerjaan terbaru saya";
+            label2.Size = new Size(54, 32);
+            label2.TabIndex = 45;
+            label2.Text = "CV";
+            // 
+            // textBox3
+            // 
+            textBox3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.Location = new Point(280, 229);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(450, 30);
+            textBox3.TabIndex = 52;
+            // 
+            // textBox2
+            // 
+            textBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.Location = new Point(280, 163);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(450, 30);
+            textBox2.TabIndex = 51;
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(280, 96);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(450, 30);
+            textBox1.TabIndex = 50;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(39, 231);
+            label5.Name = "label5";
+            label5.Size = new Size(54, 23);
+            label5.TabIndex = 49;
+            label5.Text = "Skill:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(39, 165);
+            label3.Name = "label3";
+            label3.Size = new Size(180, 23);
+            label3.TabIndex = 48;
+            label3.Text = "Riwayat Pekerjaan:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = SystemColors.Desktop;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(22, 83);
+            label1.Location = new Point(39, 98);
             label1.Name = "label1";
-            label1.Size = new Size(98, 23);
-            label1.TabIndex = 24;
-            label1.Text = "Pekerjaan";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.Desktop;
-            label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.Transparent;
-            label4.Location = new Point(390, 83);
-            label4.Name = "label4";
-            label4.Size = new Size(86, 23);
-            label4.TabIndex = 26;
-            label4.Text = "Kandidat";
-            // 
-            // listBox1
-            // 
-            listBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 22;
-            listBox1.Location = new Point(22, 124);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(362, 378);
-            listBox1.TabIndex = 27;
-            // 
-            // listBox2
-            // 
-            listBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 22;
-            listBox2.Location = new Point(390, 124);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(95, 378);
-            listBox2.TabIndex = 28;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.DarkGray;
-            button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(526, 124);
-            button3.Name = "button3";
-            button3.Size = new Size(204, 36);
-            button3.TabIndex = 32;
-            button3.Text = "Lihat selengkapnya";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            label1.Size = new Size(185, 23);
+            label1.TabIndex = 47;
+            label1.Text = "Riwayat Pendidikan:";
             // 
             // button1
             // 
-            button1.BackColor = Color.DarkGray;
+            button1.BackColor = Color.Lime;
             button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(767, 22);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(782, 491);
             button1.Name = "button1";
-            button1.Size = new Size(181, 36);
-            button1.TabIndex = 33;
-            button1.Text = "Posting Pekerjaan";
+            button1.Size = new Size(166, 39);
+            button1.TabIndex = 58;
+            button1.Text = "Simpan CV";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // button7
             // 
@@ -142,21 +141,22 @@
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
             // 
-            // iklanPekerjaan
+            // CV
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
             Controls.Add(button7);
             Controls.Add(button1);
-            Controls.Add(button3);
-            Controls.Add(listBox2);
-            Controls.Add(listBox1);
-            Controls.Add(label4);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(label5);
+            Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Name = "iklanPekerjaan";
+            Name = "CV";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -167,11 +167,12 @@
 
         private PictureBox pictureBox1;
         private Label label2;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Label label5;
+        private Label label3;
         private Label label1;
-        private Label label4;
-        private ListBox listBox1;
-        private ListBox listBox2;
-        private Button button3;
         private Button button1;
         private Button button7;
     }

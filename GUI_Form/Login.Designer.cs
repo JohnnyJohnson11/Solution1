@@ -55,7 +55,7 @@
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.Location = new Point(376, 203);
             textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
@@ -66,7 +66,7 @@
             // 
             // textBox2
             // 
-            textBox2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.Location = new Point(376, 247);
             textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
@@ -79,10 +79,10 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(376, 370);
             label2.Name = "label2";
-            label2.Size = new Size(155, 20);
+            label2.Size = new Size(139, 19);
             label2.TabIndex = 5;
             label2.Text = "Belum punya akun?";
             label2.Click += label2_Click;
@@ -101,7 +101,7 @@
             // button2
             // 
             button2.BackColor = Color.Blue;
-            button2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = SystemColors.ButtonFace;
             button2.Location = new Point(548, 361);
             button2.Margin = new Padding(0);
@@ -114,7 +114,9 @@
             // 
             // button1
             // 
+            button1.AllowDrop = true;
             button1.BackColor = Color.Blue;
+            button1.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
             button1.Location = new Point(376, 296);
             button1.Name = "button1";
@@ -122,6 +124,7 @@
             button1.TabIndex = 8;
             button1.Text = "Masuk";
             button1.UseVisualStyleBackColor = false;
+            button1.UseWaitCursor = true;
             button1.Click += button1_Click_1;
             // 
             // pictureBox1

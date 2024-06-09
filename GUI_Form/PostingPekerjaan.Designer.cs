@@ -40,12 +40,12 @@
             radioButton2 = new RadioButton();
             radioButton3 = new RadioButton();
             button1 = new Button();
-            label6 = new Label();
             richTextBox1 = new RichTextBox();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             label7 = new Label();
             textBox2 = new TextBox();
+            button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(32, 19);
+            label1.Location = new Point(68, 18);
             label1.Name = "label1";
             label1.Size = new Size(227, 23);
             label1.TabIndex = 21;
@@ -158,26 +158,13 @@
             button1.BackColor = Color.DodgerBlue;
             button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(816, 478);
+            button1.Location = new Point(806, 478);
             button1.Name = "button1";
-            button1.Size = new Size(111, 39);
+            button1.Size = new Size(121, 39);
             button1.TabIndex = 32;
-            button1.Text = "Konfirmasi";
+            button1.Text = "Selanjutnya";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = SystemColors.Desktop;
-            label6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.Transparent;
-            label6.Location = new Point(5, 9);
-            label6.Name = "label6";
-            label6.Size = new Size(21, 23);
-            label6.TabIndex = 35;
-            label6.Text = "<";
-            label6.Click += label6_Click;
             // 
             // richTextBox1
             // 
@@ -190,20 +177,22 @@
             // 
             // comboBox1
             // 
+            comboBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "NanggroeAcehDarusallam", "SumateraUtara", "SumateraSelatan", "SumateraBarat", "Bengkulu", "Riau", "KepulauanRiau", "Jambi", "Lampung", "BangkaBelitung", "KalimantanBarat", "KalimantanTimur", "KalimantanSelatan", "KalimantanTengah", "KalimantanUtara", "Banten", "DKIJakarta", "JawaBarat", "JawaTengah", "DaerahIstimewaYogyakarta", "JawaTimur", "Bali", "NusaTenggaraTimur ", "NusaTenggaraBarat", "SulawesiBarat", "SulawesiTengah", "SulawesiUtara", "SulawesiTenggara", "SulawesiSelatan", "MalukuUtara", "Maluku", "Papua" });
             comboBox1.Location = new Point(12, 190);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
+            comboBox1.Size = new Size(151, 30);
             comboBox1.TabIndex = 50;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // comboBox2
             // 
+            comboBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(310, 190);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 28);
+            comboBox2.Size = new Size(151, 30);
             comboBox2.TabIndex = 52;
             // 
             // label7
@@ -224,17 +213,29 @@
             textBox2.Size = new Size(178, 30);
             textBox2.TabIndex = 53;
             // 
+            // button7
+            // 
+            button7.BackColor = Color.Black;
+            button7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.ForeColor = SystemColors.ButtonFace;
+            button7.Location = new Point(12, 12);
+            button7.Name = "button7";
+            button7.Size = new Size(37, 29);
+            button7.TabIndex = 81;
+            button7.Text = "<";
+            button7.UseVisualStyleBackColor = false;
+            // 
             // PostingPekerjaan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(button7);
             Controls.Add(textBox2);
             Controls.Add(comboBox2);
             Controls.Add(label7);
             Controls.Add(comboBox1);
             Controls.Add(richTextBox1);
-            Controls.Add(label6);
             Controls.Add(button1);
             Controls.Add(radioButton3);
             Controls.Add(radioButton2);
@@ -266,11 +267,11 @@
         private RadioButton radioButton2;
         private RadioButton radioButton3;
         private Button button1;
-        private Label label6;
         private RichTextBox richTextBox1;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
         private Label label7;
         private TextBox textBox2;
+        private Button button7;
     }
 }

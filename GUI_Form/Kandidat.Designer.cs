@@ -36,8 +36,8 @@
             button3 = new Button();
             button1 = new Button();
             label3 = new Label();
-            label4 = new Label();
             richTextBox1 = new RichTextBox();
+            button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             label2.BackColor = SystemColors.GrayText;
             label2.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(46, 23);
+            label2.Location = new Point(71, 24);
             label2.Name = "label2";
             label2.Size = new Size(130, 32);
             label2.TabIndex = 24;
@@ -119,18 +119,6 @@
             label3.TabIndex = 29;
             label3.Text = "Jawaban:";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.Desktop;
-            label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.Transparent;
-            label4.Location = new Point(19, 9);
-            label4.Name = "label4";
-            label4.Size = new Size(21, 23);
-            label4.TabIndex = 35;
-            label4.Text = "<";
-            // 
             // richTextBox1
             // 
             richTextBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -140,13 +128,25 @@
             richTextBox1.TabIndex = 50;
             richTextBox1.Text = "";
             // 
+            // button7
+            // 
+            button7.BackColor = Color.Black;
+            button7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.ForeColor = SystemColors.ButtonFace;
+            button7.Location = new Point(12, 12);
+            button7.Name = "button7";
+            button7.Size = new Size(37, 29);
+            button7.TabIndex = 81;
+            button7.Text = "<";
+            button7.UseVisualStyleBackColor = false;
+            // 
             // Kandidat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(button7);
             Controls.Add(richTextBox1);
-            Controls.Add(label4);
             Controls.Add(button1);
             Controls.Add(button3);
             Controls.Add(label3);
@@ -170,7 +170,7 @@
         private Button button3;
         private Button button1;
         private Label label3;
-        private Label label4;
         private RichTextBox richTextBox1;
+        private Button button7;
     }
 }

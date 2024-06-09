@@ -1,6 +1,6 @@
 ﻿namespace GUI_Form
 {
-    partial class iklanPekerjaan
+    partial class Pertanyaan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(iklanPekerjaan));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pertanyaan));
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            label1 = new Label();
-            label4 = new Label();
-            listBox1 = new ListBox();
-            listBox2 = new ListBox();
             button3 = new Button();
+            textBox1 = new TextBox();
             button1 = new Button();
             button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -44,10 +41,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-9, -5);
+            pictureBox1.Location = new Point(-9, -9);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(978, 566);
-            pictureBox1.TabIndex = 20;
+            pictureBox1.Size = new Size(978, 574);
+            pictureBox1.TabIndex = 18;
             pictureBox1.TabStop = false;
             // 
             // label2
@@ -56,79 +53,46 @@
             label2.BackColor = SystemColors.GrayText;
             label2.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(59, 22);
+            label2.Location = new Point(66, 23);
             label2.Name = "label2";
-            label2.Size = new Size(362, 32);
-            label2.TabIndex = 23;
-            label2.Text = "Iklan pekerjaan terbaru saya";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.Desktop;
-            label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(22, 83);
-            label1.Name = "label1";
-            label1.Size = new Size(98, 23);
-            label1.TabIndex = 24;
-            label1.Text = "Pekerjaan";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.Desktop;
-            label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.Transparent;
-            label4.Location = new Point(390, 83);
-            label4.Name = "label4";
-            label4.Size = new Size(86, 23);
-            label4.TabIndex = 26;
-            label4.Text = "Kandidat";
-            // 
-            // listBox1
-            // 
-            listBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 22;
-            listBox1.Location = new Point(22, 124);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(362, 378);
-            listBox1.TabIndex = 27;
-            // 
-            // listBox2
-            // 
-            listBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 22;
-            listBox2.Location = new Point(390, 124);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(95, 378);
-            listBox2.TabIndex = 28;
+            label2.Size = new Size(130, 32);
+            label2.TabIndex = 36;
+            label2.Text = "Kandidat";
             // 
             // button3
             // 
-            button3.BackColor = Color.DarkGray;
+            button3.BackColor = Color.Blue;
             button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(526, 124);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(375, 241);
             button3.Name = "button3";
-            button3.Size = new Size(204, 36);
-            button3.TabIndex = 32;
-            button3.Text = "Lihat selengkapnya";
+            button3.Size = new Size(229, 36);
+            button3.TabIndex = 55;
+            button3.Text = "Browse Pertanyaan";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(206, 284);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(578, 30);
+            textBox1.TabIndex = 56;
+            textBox1.Text = "Pilih FIle";
+            // 
             // button1
             // 
-            button1.BackColor = Color.DarkGray;
+            button1.BackColor = Color.DodgerBlue;
             button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(767, 22);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(760, 500);
             button1.Name = "button1";
-            button1.Size = new Size(181, 36);
-            button1.TabIndex = 33;
-            button1.Text = "Posting Pekerjaan";
+            button1.Size = new Size(186, 39);
+            button1.TabIndex = 57;
+            button1.Text = "Kirim Pertanyaan";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // button7
             // 
@@ -142,21 +106,18 @@
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
             // 
-            // iklanPekerjaan
+            // Pertanyaan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
             Controls.Add(button7);
             Controls.Add(button1);
+            Controls.Add(textBox1);
             Controls.Add(button3);
-            Controls.Add(listBox2);
-            Controls.Add(listBox1);
-            Controls.Add(label4);
-            Controls.Add(label1);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
-            Name = "iklanPekerjaan";
+            Name = "Pertanyaan";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -167,11 +128,8 @@
 
         private PictureBox pictureBox1;
         private Label label2;
-        private Label label1;
-        private Label label4;
-        private ListBox listBox1;
-        private ListBox listBox2;
         private Button button3;
+        private TextBox textBox1;
         private Button button1;
         private Button button7;
     }

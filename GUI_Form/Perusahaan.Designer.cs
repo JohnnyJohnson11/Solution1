@@ -41,6 +41,7 @@
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             button3 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -60,7 +61,7 @@
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ControlDark;
             label1.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(105, 18);
+            label1.Location = new Point(102, 69);
             label1.Name = "label1";
             label1.Size = new Size(748, 42);
             label1.TabIndex = 21;
@@ -72,7 +73,7 @@
             label2.BackColor = SystemColors.GrayText;
             label2.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Transparent;
-            label2.Location = new Point(79, 288);
+            label2.Location = new Point(76, 320);
             label2.Name = "label2";
             label2.Size = new Size(268, 32);
             label2.TabIndex = 22;
@@ -84,7 +85,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(27, 334);
+            label3.Location = new Point(24, 366);
             label3.Name = "label3";
             label3.Size = new Size(368, 22);
             label3.TabIndex = 23;
@@ -96,7 +97,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(36, 356);
+            label4.Location = new Point(33, 388);
             label4.Name = "label4";
             label4.Size = new Size(347, 22);
             label4.TabIndex = 24;
@@ -108,7 +109,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(125, 378);
+            label5.Location = new Point(122, 410);
             label5.Name = "label5";
             label5.Size = new Size(146, 22);
             label5.TabIndex = 25;
@@ -120,7 +121,7 @@
             label6.BackColor = SystemColors.GrayText;
             label6.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.Transparent;
-            label6.Location = new Point(585, 288);
+            label6.Location = new Point(582, 320);
             label6.Name = "label6";
             label6.Size = new Size(279, 32);
             label6.TabIndex = 26;
@@ -132,7 +133,7 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(521, 334);
+            label7.Location = new Point(518, 366);
             label7.Name = "label7";
             label7.Size = new Size(412, 22);
             label7.TabIndex = 27;
@@ -144,7 +145,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(574, 356);
+            label8.Location = new Point(571, 388);
             label8.Name = "label8";
             label8.Size = new Size(279, 22);
             label8.TabIndex = 28;
@@ -153,7 +154,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(115, 128);
+            pictureBox2.Location = new Point(112, 160);
             pictureBox2.Margin = new Padding(5);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(192, 145);
@@ -163,7 +164,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(642, 125);
+            pictureBox3.Location = new Point(639, 157);
             pictureBox3.Margin = new Padding(5);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(170, 148);
@@ -182,11 +183,23 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.DarkGray;
+            button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(749, 21);
+            button1.Name = "button1";
+            button1.Size = new Size(181, 36);
+            button1.TabIndex = 32;
+            button1.Text = "Profil Perusahaan";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // Perusahaan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(button1);
             Controls.Add(button3);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -222,5 +235,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Button button3;
+        private Button button1;
     }
 }
