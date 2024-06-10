@@ -202,6 +202,7 @@
             pictureBox1.Size = new Size(978, 566);
             pictureBox1.TabIndex = 56;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // comboBox1
             // 
@@ -263,6 +264,7 @@
             button7.TabIndex = 80;
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // ProfilPerusahaan
             // 

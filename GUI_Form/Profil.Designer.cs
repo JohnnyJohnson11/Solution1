@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profil));
             button6 = new Button();
-            textBox5 = new TextBox();
             label7 = new Label();
             button5 = new Button();
             button4 = new Button();
@@ -55,20 +54,13 @@
             // 
             button6.BackColor = SystemColors.ActiveCaption;
             button6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(721, 329);
+            button6.Location = new Point(217, 329);
             button6.Name = "button6";
             button6.Size = new Size(188, 36);
             button6.TabIndex = 55;
             button6.Text = "Tambah/Ubah CV";
             button6.UseVisualStyleBackColor = false;
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(217, 334);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(450, 30);
-            textBox5.TabIndex = 54;
+            button6.Click += button6_Click;
             // 
             // label7
             // 
@@ -91,6 +83,7 @@
             button5.TabIndex = 52;
             button5.Text = "Log Out";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -159,7 +152,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(450, 30);
             textBox2.TabIndex = 45;
-
             // 
             // textBox1
             // 
@@ -241,6 +233,7 @@
             button7.TabIndex = 81;
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // Profil
             // 
@@ -249,7 +242,6 @@
             ClientSize = new Size(960, 557);
             Controls.Add(button7);
             Controls.Add(button6);
-            Controls.Add(textBox5);
             Controls.Add(label7);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -276,7 +268,6 @@
         #endregion
 
         private Button button6;
-        private TextBox textBox5;
         private Label label7;
         private Button button5;
         private Button button4;

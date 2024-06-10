@@ -35,6 +35,7 @@
             button7 = new Button();
             button3 = new Button();
             textBox1 = new TextBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -82,6 +83,7 @@
             button7.TabIndex = 81;
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button3
             // 
@@ -105,13 +107,26 @@
             textBox1.Size = new Size(578, 30);
             textBox1.TabIndex = 83;
             textBox1.Text = "Pilih FIle";
-
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Green;
+            button2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(375, 181);
+            button2.Name = "button2";
+            button2.Size = new Size(229, 36);
+            button2.TabIndex = 84;
+            button2.Text = "Lihat Pertanyaan";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // JawabPertanyaan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(button2);
             Controls.Add(textBox1);
             Controls.Add(button3);
             Controls.Add(button7);
@@ -133,5 +148,6 @@
         private Button button7;
         private Button button3;
         private TextBox textBox1;
+        private Button button2;
     }
 }

@@ -24,5 +24,12 @@ namespace GUI_Form
             halamanIklan.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProfilPerusahaan halamanProfilPerusahaan = new ProfilPerusahaan();
+            halamanProfilPerusahaan.Show();
+            this.Hide();
+        }
     }
 }

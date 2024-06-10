@@ -193,6 +193,7 @@
             button1.TabIndex = 32;
             button1.Text = "Profil Perusahaan";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Perusahaan
             // 

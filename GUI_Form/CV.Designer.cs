@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CV));
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
             textBox1 = new TextBox();
             label5 = new Label();
             label3 = new Label();
             label1 = new Label();
             button1 = new Button();
             button7 = new Button();
+            richTextBox1 = new RichTextBox();
+            richTextBox2 = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -63,22 +63,6 @@
             label2.TabIndex = 45;
             label2.Text = "CV";
             // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(280, 229);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(450, 30);
-            textBox3.TabIndex = 52;
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(280, 163);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(450, 30);
-            textBox2.TabIndex = 51;
-            // 
             // textBox1
             // 
             textBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -91,7 +75,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(39, 231);
+            label5.Location = new Point(39, 306);
             label5.Name = "label5";
             label5.Size = new Size(54, 23);
             label5.TabIndex = 49;
@@ -101,7 +85,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(39, 165);
+            label3.Location = new Point(39, 152);
             label3.Name = "label3";
             label3.Size = new Size(180, 23);
             label3.TabIndex = 48;
@@ -128,6 +112,7 @@
             button1.TabIndex = 58;
             button1.Text = "Simpan CV";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button7
             // 
@@ -140,16 +125,35 @@
             button7.TabIndex = 81;
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBox1.Location = new Point(280, 152);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(450, 127);
+            richTextBox1.TabIndex = 82;
+            richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            richTextBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBox2.Location = new Point(280, 304);
+            richTextBox2.Name = "richTextBox2";
+            richTextBox2.Size = new Size(450, 127);
+            richTextBox2.TabIndex = 83;
+            richTextBox2.Text = "";
             // 
             // CV
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(richTextBox2);
+            Controls.Add(richTextBox1);
             Controls.Add(button7);
             Controls.Add(button1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label5);
             Controls.Add(label3);
@@ -167,13 +171,13 @@
 
         private PictureBox pictureBox1;
         private Label label2;
-        private TextBox textBox3;
-        private TextBox textBox2;
         private TextBox textBox1;
         private Label label5;
         private Label label3;
         private Label label1;
         private Button button1;
         private Button button7;
+        private RichTextBox richTextBox1;
+        private RichTextBox richTextBox2;
     }
 }

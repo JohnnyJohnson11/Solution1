@@ -139,6 +139,7 @@
             button7.TabIndex = 81;
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // Kandidat
             // 

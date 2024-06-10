@@ -16,5 +16,26 @@ namespace GUI_Form
         {
             InitializeComponent();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            HalamanUtama halamanUtama = new HalamanUtama();
+            halamanUtama.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Login halamanLogin = new Login();
+            halamanLogin.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            CV halamanCv = new CV();
+            halamanCv.Show();
+            this.Hide();
+        }
     }
 }

@@ -76,10 +76,12 @@ public class Pekerja
     public string idPekerja { get; set; }
     public string profilPekerja { get; set; }
     public List<Lamaran> lamaranDikirim { get; set; }
+    public CV Cv { get; set; }
     public Pekerja()
     {
         Random rnd = new Random();
         this.idPekerja = "PK" + rnd.Next(1000000, 2000000).ToString();
+        this.Cv = new CV();
         this.lamaranDikirim = new List<Lamaran>();
     }
 }
@@ -90,14 +92,9 @@ public class Lamaran
     public string idPekerja { get; set; }
     public string idPekerjaan { get; set; }
     public string idCv { get; set; }
+    public string jawaban {  get; set; }
     public string statusLamaran { get; set; }
-    public Lamaran(string idPekerja, string idPekerjaan, string idCv)
-    {
-        this.idCv = idCv;
-        this.idPekerja = idPekerja;
-        this.idPekerjaan = idPekerjaan;
-        this.statusLamaran = "pending";
-    }
+    public Lamaran(){}
 }
 
 public class Pekerjaan
@@ -109,7 +106,11 @@ public class Pekerjaan
     public string gaji { get;set; }
     public string deskripsiPekerjaan { get; set; }
     public List<Lamaran> lamaranDiterima { get; set; }
-    public Pekerjaan(){}
+    public string pertanyaan { get; set; }
+    public Pekerjaan()
+    {
+        this.lamaranDiterima = new List<Lamaran>();
+    }
 }
 
 public class CV
@@ -119,13 +120,7 @@ public class CV
     public string riwayatPekerjaan { get; set; }
     public string skill {  get; set; }
     public string idPekerja {  get; set; }
-    public CV(string riwayatPendidikan, string riwayatPekerjaan, string skill, string idPekerja)
-    {
-        this.riwayatPendidikan = riwayatPendidikan;
-        this.riwayatPekerjaan = riwayatPekerjaan;
-        this.skill = skill;
-        this.idPekerja = idPekerja;
-    }
+    public CV(){}
 }
 
 public class Config

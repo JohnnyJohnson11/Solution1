@@ -23,5 +23,19 @@ namespace GUI_Form
             halamanPerusahaan.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CariPekerjaan halamanCariPekerjaan = new CariPekerjaan();
+            halamanCariPekerjaan.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Profil halamanProfil = new Profil();
+            halamanProfil.Show();
+            this.Hide();
+        }
     }
 }

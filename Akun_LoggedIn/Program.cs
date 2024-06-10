@@ -32,7 +32,7 @@ namespace UtilityLibraries
                     {
                         _instance = new Logged_In();
                         _instance.idPerusahaan = idPerusahaan;
-                        _instance.idPerusahaan = idPekerja;
+                        _instance.idPekerja = idPekerja;
                     }
                 }
             }

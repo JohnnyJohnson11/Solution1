@@ -68,6 +68,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(212, 378);
             listBox1.TabIndex = 39;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -113,6 +114,7 @@
             button1.TabIndex = 47;
             button1.Text = "Jawab Pertanyaan";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // richTextBox1
             // 
@@ -203,12 +205,13 @@
             button7.BackColor = Color.Black;
             button7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button7.ForeColor = SystemColors.ButtonFace;
-            button7.Location = new Point(17, 12);
+            button7.Location = new Point(26, 12);
             button7.Name = "button7";
             button7.Size = new Size(37, 29);
             button7.TabIndex = 81;
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // CariPekerjaan
             // 

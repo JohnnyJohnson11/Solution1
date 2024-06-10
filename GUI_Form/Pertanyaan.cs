@@ -5,35 +5,54 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TubesKPL_WorkersUnion;
+using UtilityLibraries;
 
 namespace GUI_Form
 {
     public partial class Pertanyaan : Form
     {
-        public Pertanyaan()
+        private string idPerusahaan;
+        private string judul;
+        private int[] lokasi;
+        private string gaji;
+        private string deskripsi;
+        public Pertanyaan(string idPerusahaan, string judul, int[] lokasi, string gaji, string deskripsi)
         {
             InitializeComponent();
+            this.idPerusahaan = idPerusahaan;
+            this.judul = judul;
+            this.lokasi = lokasi;
+            this.gaji = gaji;
+            this.deskripsi = deskripsi;
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            // Create an instance of OpenFileDialog
             OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            // Set filter options and filter index
             openFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
             openFileDialog.FilterIndex = 1;
-
-            // Call the ShowDialog method to show the dialog box
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Get the selected file's path
                 string selectedFilePath = openFileDialog.FileName;
-
-                // Display the selected file path in the TextBox
                 textBox1.Text = selectedFilePath;
+                byte[] fileBytes = File.ReadAllBytes(selectedFilePath);
+                string base64String = Convert.ToBase64String(fileBytes);
+                UnggahPekerjaanConfig config = new UnggahPekerjaanConfig();
+                config.TambahData(this.idPerusahaan, this.judul, this.lokasi, this.gaji, this.deskripsi, base64String);
             }
+            iklanPekerjaan halamanPekerjaan = new iklanPekerjaan();
+            halamanPekerjaan.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            PostingPekerjaan halamanPostingPekerjaan = new PostingPekerjaan();
+            halamanPostingPekerjaan.Show();
+            this.Hide();
         }
     }
 }

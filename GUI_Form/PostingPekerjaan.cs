@@ -73,18 +73,22 @@ namespace GUI_Form
             {
                 gaji = gaji + "/Bulan";
             }
-            Logged_In logged_In = Logged_In.GetInstance("","");
-            UnggahPekerjaanConfig config = new UnggahPekerjaanConfig();
-            MessageBox.Show(logged_In.idPerusahaan);
-            config.TambahData(logged_In.idPerusahaan, judul, lokasi, gaji, deskripsi);
-            iklanPekerjaan halamanIklan = new iklanPekerjaan();
-            halamanIklan.Show();
+            Logged_In logged_In = Logged_In.GetInstance("", "");
+            Pertanyaan halamanPertanyaan = new Pertanyaan(logged_In.idPerusahaan, judul, lokasi, gaji, deskripsi);
+            halamanPertanyaan.Show();
             this.Hide();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            iklanPekerjaan halamanIklanPekerjaan = new iklanPekerjaan();
+            halamanIklanPekerjaan.Show();
+            this.Hide();
         }
     }
 }

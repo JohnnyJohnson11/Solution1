@@ -60,6 +60,7 @@
             button1.TabIndex = 19;
             button1.Text = "Profil";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -111,6 +112,7 @@
             button2.TabIndex = 24;
             button2.Text = "Cari Pekerjaan";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button4
             // 

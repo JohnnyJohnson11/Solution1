@@ -75,7 +75,8 @@ namespace GUI_Form
                 {
                     //Pindah ke menu utama
                     found = true;
-                    Logged_In logged_In = Logged_In.GetInstance(loginConfig.ListPengguna.pengguna[i].pekerja.idPekerja, loginConfig.ListPengguna.pengguna[i].perusahaan.idPerusahaan);
+                    Logged_In logged_In = Logged_In.ResetInstance(loginConfig.ListPengguna.pengguna[i].perusahaan.idPerusahaan, loginConfig.ListPengguna.pengguna[i].pekerja.idPekerja);
+                    MessageBox.Show(logged_In.idPerusahaan+"  "+logged_In.idPekerja);
                     HalamanUtama halamanUtama = new HalamanUtama();
                     halamanUtama.Show();
                     this.Hide();

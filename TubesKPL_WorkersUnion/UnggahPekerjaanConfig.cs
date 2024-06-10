@@ -42,7 +42,7 @@ namespace TubesKPL_WorkersUnion
             File.WriteAllText(filepath, tulisan);
         }
 
-        public Pekerjaan BuatDataPekerjaan(string idPerusahaan, string judulPekerjaan, int[] lokasi,string gaji,string DeskripsiPekerjaan)
+        public Pekerjaan BuatDataPekerjaan(string idPerusahaan, string judulPekerjaan, int[] lokasi,string gaji,string DeskripsiPekerjaan, string file)
         {
             Pekerjaan data = new Pekerjaan();
             Random rnd = new Random();
@@ -55,12 +55,13 @@ namespace TubesKPL_WorkersUnion
             data.gaji = gaji;
             data.judulPekerjaan = judulPekerjaan;
             data.deskripsiPekerjaan = DeskripsiPekerjaan;
+            data.pertanyaan = file;
 
             return data;
         }
 
 
-        public void TambahData(string idPerusahaan, string judulPekerjaan, int[] lokasi, string gaji, string DeskripsiPekerjaan) 
+        public void TambahData(string idPerusahaan, string judulPekerjaan, int[] lokasi, string gaji, string DeskripsiPekerjaan, string file) 
         {
             
             Config obj = ReadConfigFile<Config>();
@@ -69,15 +70,64 @@ namespace TubesKPL_WorkersUnion
                 if (obj.pengguna[i].perusahaan.idPerusahaan == idPerusahaan)
                 {  
                     Pekerjaan dataPekerjaan = new Pekerjaan();
-                    dataPekerjaan = BuatDataPekerjaan(idPerusahaan, judulPekerjaan, lokasi, gaji, DeskripsiPekerjaan);
+                    dataPekerjaan = BuatDataPekerjaan(idPerusahaan, judulPekerjaan, lokasi, gaji, DeskripsiPekerjaan, file);
                     obj.pengguna[i].perusahaan.postinganPekerjaan.Add(dataPekerjaan);
-                   
                 }
             }
             listPengguna = obj;
             WriteConfigFile();
         }
+        public void TambahLamaran(string idPekerja, string idPekerjaan, string idCv, string jawaban)
+        {
+            Config obj = ReadConfigFile<Config>();
+            for (int i = 0; i < obj.pengguna.Count; i++)
+            {
+                if (obj.pengguna[i].pekerja.idPekerja == idPekerja)
+                {
+                    Lamaran dataLamaran = new Lamaran();
+                    Random rnd = new Random();
+                    dataLamaran.idLamaran = "LM" + idPekerja.Substring(2) + rnd.Next(1000, 2000).ToString();
+                    dataLamaran.idCv = idCv;
+                    dataLamaran.idPekerja = idPekerja;
+                    dataLamaran.idPekerjaan = idPekerjaan;
+                    dataLamaran.statusLamaran = "pending";
+                    dataLamaran.jawaban = jawaban;
+                    obj.pengguna[i].pekerja.lamaranDikirim.Add(dataLamaran);
+                    for (int j = 0; j < obj.pengguna[i].perusahaan.postinganPekerjaan.Count; j++)
+                    {
+                        if (obj.pengguna[i].perusahaan.postinganPekerjaan[j].idPekerjaan == idPekerjaan)
+                        {
+                            obj.pengguna[i].perusahaan.postinganPekerjaan[j].lamaranDiterima.Add(dataLamaran);
+                        }
+                    }
+                }
+            }
+            listPengguna = obj;
+            WriteConfigFile();
+        }
+        public void TambahCv(string idPekerja, string riwayatPendidikan, string riwayatPekerjaan, string skill)
+        {
+            bool found = false;
+            Config obj = ReadConfigFile<Config>();
+            int i;
+            CV dataCv= new CV();
+            dataCv.idPekerja = idPekerja;
+            dataCv.riwayatPendidikan= riwayatPendidikan;
+            dataCv.riwayatPekerjaan= riwayatPekerjaan;
+            dataCv.skill = skill;
 
+            for (i = 0; i < obj.pengguna.Count; i++)
+            {
+                if (obj.pengguna[i].pekerja.idPekerja == idPekerja)
+                {
+                    //Pindah ke menu utama
+                    found = true;
+                    obj.pengguna[i].pekerja.Cv= dataCv;
+                }
+            }
+            listPengguna = obj;
+            WriteConfigFile();
+        }
         public void HapusData(string idPerusahaan, string idPekerjaan)
         {
             Config obj = ReadConfigFile<Config>();
@@ -132,6 +182,8 @@ namespace TubesKPL_WorkersUnion
             Pengguna penggunaBaru = new Pengguna(username, password);
             penggunaBaru.fullname = fullname;
             penggunaBaru.email = email;
+            Random rnd = new Random();
+            penggunaBaru.pekerja.Cv.idCv = "CV"+penggunaBaru.pekerja.idPekerja.Substring(2);
             obj.pengguna.Add(penggunaBaru);
             listPengguna = obj;
             WriteConfigFile();

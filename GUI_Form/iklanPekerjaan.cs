@@ -15,11 +15,12 @@ namespace GUI_Form
 {
     public partial class iklanPekerjaan : Form
     {
+        private List<string> judulPekerjaan = new List<string>();
+        private List<string> jumlahKandidat = new List<string>();
+        private List<string> KumpulanIdPekerjaan = new List<string>();
         public iklanPekerjaan()
         {
             InitializeComponent();
-            List<string> judulPekerjaan = new List<string>();
-            List<string> jumlahKandidat = new List<string>();
             LoginConfig loginConfig = new LoginConfig();
             loginConfig.ReadConfigFile();
             Logged_In logged_in = Logged_In.GetInstance("", "");
@@ -40,6 +41,7 @@ namespace GUI_Form
                         {
                             jumlahKandidat.Add("0");
                         }
+                        KumpulanIdPekerjaan.Add(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].idPekerjaan);
                     }
                 }
             }
@@ -63,8 +65,15 @@ namespace GUI_Form
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Kandidat halamanKandidat = new Kandidat();
+            Kandidat halamanKandidat = new Kandidat(KumpulanIdPekerjaan.ElementAt(listBox1.SelectedIndex));
             halamanKandidat.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            HalamanUtama halamanUtama = new HalamanUtama();
+            halamanUtama.Show();
             this.Hide();
         }
     }
