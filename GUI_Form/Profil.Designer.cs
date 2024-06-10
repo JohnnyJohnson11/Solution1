@@ -29,17 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profil));
-            button6 = new Button();
             label7 = new Label();
             button5 = new Button();
-            button4 = new Button();
-            button2 = new Button();
-            button1 = new Button();
             button3 = new Button();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label3 = new Label();
@@ -47,20 +39,13 @@
             label2 = new Label();
             pictureBox1 = new PictureBox();
             button7 = new Button();
+            label4 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // button6
-            // 
-            button6.BackColor = SystemColors.ActiveCaption;
-            button6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(217, 329);
-            button6.Name = "button6";
-            button6.Size = new Size(188, 36);
-            button6.TabIndex = 55;
-            button6.Text = "Tambah/Ubah CV";
-            button6.UseVisualStyleBackColor = false;
-            button6.Click += button6_Click;
             // 
             // label7
             // 
@@ -85,81 +70,16 @@
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
-            // button4
-            // 
-            button4.BackColor = SystemColors.ActiveCaption;
-            button4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(721, 269);
-            button4.Name = "button4";
-            button4.Size = new Size(188, 36);
-            button4.TabIndex = 51;
-            button4.Text = "Ubah No. Telpon";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.ActiveCaption;
-            button2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(721, 208);
-            button2.Name = "button2";
-            button2.Size = new Size(188, 36);
-            button2.TabIndex = 50;
-            button2.Text = "Ubah Email";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ActiveCaption;
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(721, 142);
-            button1.Name = "button1";
-            button1.Size = new Size(188, 36);
-            button1.TabIndex = 49;
-            button1.Text = "Ubah Tanggal Lahir";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // button3
             // 
             button3.BackColor = SystemColors.ActiveCaption;
             button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(721, 75);
+            button3.Location = new Point(771, 75);
             button3.Name = "button3";
-            button3.Size = new Size(188, 36);
+            button3.Size = new Size(138, 36);
             button3.TabIndex = 48;
-            button3.Text = "Ubah Nama";
+            button3.Text = "Ubah Profil";
             button3.UseVisualStyleBackColor = false;
-            // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(217, 274);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(450, 30);
-            textBox4.TabIndex = 47;
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(217, 213);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(450, 30);
-            textBox3.TabIndex = 46;
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(217, 147);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(450, 30);
-            textBox2.TabIndex = 45;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(217, 80);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(450, 30);
-            textBox1.TabIndex = 44;
             // 
             // label6
             // 
@@ -235,23 +155,72 @@
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(217, 82);
+            label4.Name = "label4";
+            label4.Size = new Size(69, 23);
+            label4.TabIndex = 82;
+            label4.Text = "(nama)";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(217, 149);
+            label8.Name = "label8";
+            label8.Size = new Size(124, 23);
+            label8.TabIndex = 83;
+            label8.Text = "(tanggallahir)";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(217, 215);
+            label9.Name = "label9";
+            label9.Size = new Size(69, 23);
+            label9.TabIndex = 84;
+            label9.Text = "(email)";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(217, 276);
+            label10.Name = "label10";
+            label10.Size = new Size(96, 23);
+            label10.TabIndex = 85;
+            label10.Text = "(notelpon)";
+            // 
+            // button6
+            // 
+            button6.BackColor = SystemColors.ActiveCaption;
+            button6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button6.Location = new Point(217, 329);
+            button6.Name = "button6";
+            button6.Size = new Size(188, 36);
+            button6.TabIndex = 55;
+            button6.Text = "Tambah/Ubah CV";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
             // Profil
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label4);
             Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(label7);
             Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(button3);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label3);
@@ -266,18 +235,9 @@
         }
 
         #endregion
-
-        private Button button6;
         private Label label7;
         private Button button5;
-        private Button button4;
-        private Button button2;
-        private Button button1;
         private Button button3;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
         private Label label6;
         private Label label5;
         private Label label3;
@@ -285,5 +245,10 @@
         private Label label2;
         private PictureBox pictureBox1;
         private Button button7;
+        private Label label4;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Button button6;
     }
 }

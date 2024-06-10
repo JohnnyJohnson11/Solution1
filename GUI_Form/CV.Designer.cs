@@ -130,7 +130,7 @@
             // richTextBox1
             // 
             richTextBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBox1.Location = new Point(280, 152);
+            richTextBox1.Location = new Point(280, 150);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new Size(450, 127);
             richTextBox1.TabIndex = 82;

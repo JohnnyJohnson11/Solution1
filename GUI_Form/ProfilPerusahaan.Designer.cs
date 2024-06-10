@@ -29,48 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfilPerusahaan));
-            button6 = new Button();
-            textBox5 = new TextBox();
             label7 = new Label();
-            button4 = new Button();
-            button2 = new Button();
-            button1 = new Button();
             button3 = new Button();
-            textBox4 = new TextBox();
-            textBox1 = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label3 = new Label();
             label1 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            richTextBox1 = new RichTextBox();
             label8 = new Label();
-            button5 = new Button();
             button7 = new Button();
+            label4 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            richTextBox1 = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // button6
-            // 
-            button6.BackColor = SystemColors.ActiveCaption;
-            button6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(721, 329);
-            button6.Name = "button6";
-            button6.Size = new Size(188, 36);
-            button6.TabIndex = 74;
-            button6.Text = "Ubah No. Telpon";
-            button6.UseVisualStyleBackColor = false;
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(217, 334);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(450, 30);
-            textBox5.TabIndex = 73;
             // 
             // label7
             // 
@@ -82,65 +58,16 @@
             label7.TabIndex = 72;
             label7.Text = "Nomor Telpon";
             // 
-            // button4
-            // 
-            button4.BackColor = SystemColors.ActiveCaption;
-            button4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(721, 269);
-            button4.Name = "button4";
-            button4.Size = new Size(188, 36);
-            button4.TabIndex = 70;
-            button4.Text = "Ubah Email";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.ActiveCaption;
-            button2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(721, 208);
-            button2.Name = "button2";
-            button2.Size = new Size(188, 36);
-            button2.TabIndex = 69;
-            button2.Text = "Ubah Kota";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ActiveCaption;
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(721, 142);
-            button1.Name = "button1";
-            button1.Size = new Size(188, 36);
-            button1.TabIndex = 68;
-            button1.Text = "Ubah Provinsi";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // button3
             // 
             button3.BackColor = SystemColors.ActiveCaption;
             button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(721, 75);
+            button3.Location = new Point(690, 75);
             button3.Name = "button3";
-            button3.Size = new Size(188, 36);
+            button3.Size = new Size(219, 36);
             button3.TabIndex = 67;
-            button3.Text = "Ubah Nama";
+            button3.Text = "Ubah Profil Perusahaan";
             button3.UseVisualStyleBackColor = false;
-            // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(217, 274);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(450, 30);
-            textBox4.TabIndex = 66;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(217, 80);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(450, 30);
-            textBox1.TabIndex = 63;
             // 
             // label6
             // 
@@ -178,9 +105,9 @@
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(39, 82);
             label1.Name = "label1";
-            label1.Size = new Size(66, 23);
+            label1.Size = new Size(169, 23);
             label1.TabIndex = 59;
-            label1.Text = "Nama:";
+            label1.Text = "Nama Perusahaan:";
             // 
             // label2
             // 
@@ -204,34 +131,6 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "NanggroeAcehDarusallam", "SumateraUtara", "SumateraSelatan", "SumateraBarat", "Bengkulu", "Riau", "KepulauanRiau", "Jambi", "Lampung", "BangkaBelitung", "KalimantanBarat", "KalimantanTimur", "KalimantanSelatan", "KalimantanTengah", "KalimantanUtara", "Banten", "DKIJakarta", "JawaBarat", "JawaTengah", "DaerahIstimewaYogyakarta", "JawaTimur", "Bali", "NusaTenggaraTimur ", "NusaTenggaraBarat", "SulawesiBarat", "SulawesiTengah", "SulawesiUtara", "SulawesiTenggara", "SulawesiSelatan", "MalukuUtara", "Maluku", "Papua" });
-            comboBox1.Location = new Point(217, 147);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 30);
-            comboBox1.TabIndex = 75;
-            // 
-            // comboBox2
-            // 
-            comboBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(217, 208);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 30);
-            comboBox2.TabIndex = 76;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBox1.Location = new Point(217, 388);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(450, 141);
-            richTextBox1.TabIndex = 78;
-            richTextBox1.Text = "";
-            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -241,17 +140,6 @@
             label8.Size = new Size(89, 23);
             label8.TabIndex = 77;
             label8.Text = "Deskripsi";
-            // 
-            // button5
-            // 
-            button5.BackColor = SystemColors.ActiveCaption;
-            button5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(721, 383);
-            button5.Name = "button5";
-            button5.Size = new Size(188, 36);
-            button5.TabIndex = 79;
-            button5.Text = "Ubah Deskripsi";
-            button5.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
@@ -266,26 +154,80 @@
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(301, 84);
+            label4.Name = "label4";
+            label4.Size = new Size(165, 23);
+            label4.TabIndex = 83;
+            label4.Text = "(namaperusahaan)";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(301, 151);
+            label9.Name = "label9";
+            label9.Size = new Size(90, 23);
+            label9.TabIndex = 84;
+            label9.Text = "(provinsi)";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(301, 217);
+            label10.Name = "label10";
+            label10.Size = new Size(62, 23);
+            label10.TabIndex = 85;
+            label10.Text = "(kota)";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(301, 278);
+            label11.Name = "label11";
+            label11.Size = new Size(69, 23);
+            label11.TabIndex = 86;
+            label11.Text = "(email)";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(301, 338);
+            label12.Name = "label12";
+            label12.Size = new Size(96, 23);
+            label12.TabIndex = 87;
+            label12.Text = "(notelpon)";
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBox1.Location = new Point(301, 390);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(450, 141);
+            richTextBox1.TabIndex = 78;
+            richTextBox1.Text = "";
+            // 
             // ProfilPerusahaan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label4);
             Controls.Add(button7);
-            Controls.Add(button5);
             Controls.Add(richTextBox1);
             Controls.Add(label8);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(button6);
-            Controls.Add(textBox5);
             Controls.Add(label7);
-            Controls.Add(button4);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(button3);
-            Controls.Add(textBox4);
-            Controls.Add(textBox1);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label3);
@@ -300,27 +242,21 @@
         }
 
         #endregion
-
-        private Button button6;
-        private TextBox textBox5;
         private Label label7;
-        private Button button4;
-        private Button button2;
-        private Button button1;
         private Button button3;
-        private TextBox textBox4;
-        private TextBox textBox1;
         private Label label6;
         private Label label5;
         private Label label3;
         private Label label1;
         private Label label2;
         private PictureBox pictureBox1;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private RichTextBox richTextBox1;
         private Label label8;
-        private Button button5;
         private Button button7;
+        private Label label4;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private RichTextBox richTextBox1;
     }
 }
