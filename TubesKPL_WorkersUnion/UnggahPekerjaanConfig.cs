@@ -93,11 +93,14 @@ namespace TubesKPL_WorkersUnion
                     dataLamaran.statusLamaran = "pending";
                     dataLamaran.jawaban = jawaban;
                     obj.pengguna[i].pekerja.lamaranDikirim.Add(dataLamaran);
-                    for (int j = 0; j < obj.pengguna[i].perusahaan.postinganPekerjaan.Count; j++)
+                    for (int j = 0; j < obj.pengguna.Count; j++)
                     {
-                        if (obj.pengguna[i].perusahaan.postinganPekerjaan[j].idPekerjaan == idPekerjaan)
+                        for (int k = 0; k < obj.pengguna[j].perusahaan.postinganPekerjaan.Count; k++)
                         {
-                            obj.pengguna[i].perusahaan.postinganPekerjaan[j].lamaranDiterima.Add(dataLamaran);
+                            if (obj.pengguna[j].perusahaan.postinganPekerjaan[k].idPekerjaan == idPekerjaan)
+                            {
+                                obj.pengguna[j].perusahaan.postinganPekerjaan[k].lamaranDiterima.Add(dataLamaran);
+                            }
                         }
                     }
                 }
@@ -105,6 +108,7 @@ namespace TubesKPL_WorkersUnion
             listPengguna = obj;
             WriteConfigFile();
         }
+        
         public void TambahCv(string idPekerja, string riwayatPendidikan, string riwayatPekerjaan, string skill)
         {
             bool found = false;
@@ -120,7 +124,6 @@ namespace TubesKPL_WorkersUnion
             {
                 if (obj.pengguna[i].pekerja.idPekerja == idPekerja)
                 {
-                    //Pindah ke menu utama
                     found = true;
                     obj.pengguna[i].pekerja.Cv= dataCv;
                 }
@@ -153,6 +156,55 @@ namespace TubesKPL_WorkersUnion
             WriteConfigFile();
         }
 
+        public void UbahDataPekerja(string idPekerja, string nama, string tanggalLahir, string email, string noTelepon)
+        {
+            LoginConfig loginConfig = new LoginConfig();
+            loginConfig.ReadConfigFile();
+            Config obj = ReadConfigFile<Config>();
+            Pengguna penggunaUbahJadi;
+            bool found = false;
+            for (int i = 0; i<obj.pengguna.Count&&!found; i++)
+            {
+                if (obj.pengguna[i].pekerja.idPekerja == idPekerja)
+                {
+                    penggunaUbahJadi=loginConfig.ListPengguna.pengguna[i];
+                    penggunaUbahJadi.fullname = nama;
+                    penggunaUbahJadi.pekerja.tanggalLahir= tanggalLahir;
+                    penggunaUbahJadi.email = email;
+                    penggunaUbahJadi.pekerja.noTelepon= noTelepon;
+                    obj.pengguna[i] = penggunaUbahJadi;
+                    found = true;
+                }
+                listPengguna = obj;
+                WriteConfigFile();
+            }
+            
+        }
+        public void UbahDataPerusahaan(string idPerusahaan, string namaPerusahaan, int provinsi, int kota, string email, string noTelepon, string deskripsi)
+        {
+            LoginConfig loginConfig = new LoginConfig();
+            loginConfig.ReadConfigFile();
+            Config obj = ReadConfigFile<Config>();
+            Perusahaan perusahaanUbahJadi;
+            bool found = false;
+            for (int i=0;i<obj.pengguna.Count&&!found;i++)
+            {
+                if (obj.pengguna[i].perusahaan.idPerusahaan == idPerusahaan)
+                {
+                    perusahaanUbahJadi = loginConfig.ListPengguna.pengguna[i].perusahaan;
+                    perusahaanUbahJadi.Nama = namaPerusahaan;
+                    perusahaanUbahJadi.lokasi[0] = provinsi;
+                    perusahaanUbahJadi.lokasi[1] = kota;
+                    perusahaanUbahJadi.Email = email;
+                    perusahaanUbahJadi.NomorTelepon = noTelepon;
+                    perusahaanUbahJadi.Deskripsi = deskripsi;
+                    obj.pengguna[i].perusahaan=perusahaanUbahJadi;
+                    found = true;
+                }
+                listPengguna = obj;
+                WriteConfigFile();
+            }
+        }
         public void ShowData(Pengguna pengguna)
         {
             int i = 1;

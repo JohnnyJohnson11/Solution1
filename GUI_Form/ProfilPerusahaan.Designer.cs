@@ -68,6 +68,7 @@
             button3.TabIndex = 67;
             button3.Text = "Ubah Profil Perusahaan";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label6
             // 
@@ -209,6 +210,7 @@
             richTextBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             richTextBox1.Location = new Point(301, 390);
             richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
             richTextBox1.Size = new Size(450, 141);
             richTextBox1.TabIndex = 78;
             richTextBox1.Text = "";

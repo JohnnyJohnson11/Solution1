@@ -80,6 +80,7 @@
             button3.TabIndex = 48;
             button3.Text = "Ubah Profil";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label6
             // 

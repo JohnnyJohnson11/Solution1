@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TubesKPL_WorkersUnion
 {
-    public enum State { unemployed, searching, employed}
+    
     internal class StatusPekerja
     {
         private State currentState;

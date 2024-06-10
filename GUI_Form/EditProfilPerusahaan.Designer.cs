@@ -59,6 +59,7 @@
             button1.TabIndex = 113;
             button1.Text = "Simpan Profil";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // textBox4
             // 
@@ -87,6 +88,7 @@
             button7.TabIndex = 108;
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // label6
             // 
@@ -158,6 +160,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 30);
             comboBox1.TabIndex = 114;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // comboBox2
             // 

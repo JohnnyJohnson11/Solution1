@@ -12,6 +12,7 @@ public enum StatusPerusahaan
     Disetujui,
     Ditolak
 }
+public enum State { unemployed, searching, employed }
 
 namespace TubesKPL_WorkersUnion
 {
@@ -75,14 +76,20 @@ public class Pekerja
 {
     public string idPekerja { get; set; }
     public string profilPekerja { get; set; }
+    public string tanggalLahir {  get; set; }
+    public string noTelepon {  get; set; }
     public List<Lamaran> lamaranDikirim { get; set; }
     public CV Cv { get; set; }
+    public State Status { get; set; }
     public Pekerja()
     {
         Random rnd = new Random();
         this.idPekerja = "PK" + rnd.Next(1000000, 2000000).ToString();
         this.Cv = new CV();
         this.lamaranDikirim = new List<Lamaran>();
+        this.Status = State.unemployed;
+        this.tanggalLahir = "";
+        this.noTelepon = "";
     }
 }
 

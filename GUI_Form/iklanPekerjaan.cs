@@ -35,6 +35,7 @@ namespace GUI_Form
                         judulPekerjaan.Add(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan);
                         if (loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].lamaranDiterima != null)
                         {
+                            MessageBox.Show(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].lamaranDiterima.Count.ToString());
                             jumlahKandidat.Add(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].lamaranDiterima.Count.ToString());
                         }
                         else

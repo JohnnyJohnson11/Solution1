@@ -94,6 +94,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(180, 378);
             listBox1.TabIndex = 28;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // button3
             // 
@@ -165,6 +166,7 @@
             button2.TabIndex = 85;
             button2.Text = "Download Jawaban";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label6
             // 
@@ -268,6 +270,7 @@
             button4.TabIndex = 95;
             button4.Text = "Lihat CV";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // Kandidat
             // 

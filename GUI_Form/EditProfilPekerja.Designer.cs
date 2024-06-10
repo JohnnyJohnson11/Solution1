@@ -55,6 +55,7 @@
             button7.TabIndex = 96;
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // label6
             // 
@@ -160,6 +161,7 @@
             button1.TabIndex = 101;
             button1.Text = "Simpan Profil";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // EditProfilPekerja
             // 
