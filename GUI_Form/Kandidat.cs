@@ -64,6 +64,7 @@ namespace GUI_Form
             {
                 data = new DataCariPekerja(kumpulanIdPekerja[i], namaPekerja[i]);
                 dataCariPekerja.Add(data);
+                MessageBox.Show(kumpulanIdPekerja[i], namaPekerja[i]);
             }
             listBox1.DataSource = namaPekerja;
         }
@@ -89,6 +90,17 @@ namespace GUI_Form
                         label11.Text = loginConfig.ListPengguna.pengguna[j].pekerja.tanggalLahir;
                         label9.Text = loginConfig.ListPengguna.pengguna[j].email;
                         label10.Text = loginConfig.ListPengguna.pengguna[j].pekerja.noTelepon;
+                        if (loginConfig.ListPengguna.pengguna[j].pekerja.Status == State.searching)
+                        {
+                            label11.Text = "Mencari Pekerjaan";
+                        } else if (loginConfig.ListPengguna.pengguna[j].pekerja.Status == State.unemployed)
+                        {
+                            label11.Text = "Tidak memiliki pekerjaan";
+                        }
+                        else if (loginConfig.ListPengguna.pengguna[j].pekerja.Status == State.unemployed)
+                        {
+                            label11.Text = "Sudah memiliki pekerjaan";
+                        }
                         found = true;
                     }
                 }
@@ -128,6 +140,7 @@ namespace GUI_Form
         {
             LoginConfig loginConfig = new LoginConfig();
             loginConfig.ReadConfigFile();
+            string idCv = "";
             int i;
             if (listBox1.SelectedItem != null)
             {
@@ -136,12 +149,37 @@ namespace GUI_Form
                 {
                     if (loginConfig.ListPengguna.pengguna[j].pekerja.idPekerja == dataCariPekerja[listBox1.SelectedIndex].idPekerja)
                     {
-                        LihatCV halamanLihatCV = new LihatCV(loginConfig.ListPengguna.pengguna[j].pekerja.Cv.idCv, this.idPekerjaan);
-                        halamanLihatCV.Show();
-                        this.Hide();
+                        idCv = loginConfig.ListPengguna.pengguna[j].pekerja.Cv.idCv;
+                        found = true;
                     }
                 }
             }
+            LihatCV halamanLihatCV = new LihatCV(idCv, this.idPekerjaan);
+            halamanLihatCV.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UnggahPekerjaanConfig config = new UnggahPekerjaanConfig();
+            config.TerimaOrTolakPekerja(dataCariPekerja[listBox1.SelectedIndex].idPekerja, this.idPekerjaan, true);
+            Kandidat halamanKandidat = new Kandidat(idPekerjaan);
+            halamanKandidat.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UnggahPekerjaanConfig config = new UnggahPekerjaanConfig();
+            config.TerimaOrTolakPekerja(dataCariPekerja[listBox1.SelectedIndex].idPekerja, this.idPekerjaan, false);
+            Kandidat halamanKandidat = new Kandidat(idPekerjaan);
+            halamanKandidat.Show();
+            this.Hide();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
         }
     }
     public class DataCariPekerja

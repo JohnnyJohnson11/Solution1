@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.IO;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace TubesKPL_WorkersUnion
@@ -31,6 +33,7 @@ namespace TubesKPL_WorkersUnion
         {
             string hasil = File.ReadAllText(filepath);
             ListPengguna = JsonSerializer.Deserialize<Config>(hasil);
+           
         }
 
         public void WriteConfigFile()
@@ -46,7 +49,7 @@ namespace TubesKPL_WorkersUnion
         public void SetDefault()
         {
             ListPengguna = new Config();
-            ListPengguna.pengguna.Add(new Pengguna("Admin", "Admin"));
+            ListPengguna.pengguna.Add(new Pengguna("SEANHIMAWANARIANTO", "1302220069"));
         }
 
         public int SearchPengguna(string username)

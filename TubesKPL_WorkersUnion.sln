@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI_Form", "GUI_Form\GUI_Fo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{BFF64033-2BAE-485A-8FC3-D22DF2117DF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akun_LoggedIn", "Akun_LoggedIn\Akun_LoggedIn.csproj", "{66D068D9-676A-4CCD-9178-949379326E59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akun_LoggedIn", "Akun_LoggedIn\Akun_LoggedIn.csproj", "{66D068D9-676A-4CCD-9178-949379326E59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

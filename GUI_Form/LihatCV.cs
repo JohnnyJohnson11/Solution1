@@ -22,6 +22,7 @@ namespace GUI_Form
             InitializeComponent();
             this.idCv= idCv;
             this.idPekerjaan= idPekerjaan;
+            MessageBox.Show(this.idCv);
             LoginConfig loginConfig = new LoginConfig();
             loginConfig.ReadConfigFile();
             for (int i = 0; i<loginConfig.ListPengguna.pengguna.Count; i++)

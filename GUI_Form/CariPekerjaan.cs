@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -74,6 +75,78 @@ namespace GUI_Form
             HalamanUtama halamanUtama = new HalamanUtama();
             halamanUtama.Show();
             this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dataCariPekerjaan.Clear();
+            string inputPengguna = textBox1.Text;
+            LoginConfig loginConfig = new LoginConfig();
+            DataCariPekerjaan data;
+            loginConfig.ReadConfigFile();
+            string kataDicari;
+            List<string> hasilPencarian = new List<string>();
+            char[] whitespace = new char[] { ' ', '\t' };
+            bool verified;
+            bool found;
+            for (int i=0;i<loginConfig.ListPengguna.pengguna.Count; i++)
+            {
+                for (int j=0; j < loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan.Count; j++)
+                {
+                    verified = false;
+                    found = false;
+                    string[] pisahKata = loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan.Split(whitespace);
+                    for (int l = 0; l < pisahKata.Length; l++)
+                    {
+                        kataDicari = "";
+                        for (int k = l; k < pisahKata.Length && !verified; k++)
+                        {
+                            kataDicari = kataDicari + " " + pisahKata[k];
+                            if (LevenshteinDistance(inputPengguna, kataDicari) <= 2)
+                            {
+                                hasilPencarian.Add(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan);
+                                data = new DataCariPekerjaan(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].idPekerjaan, loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan);
+                                dataCariPekerjaan.Add(data);
+                                verified = true;
+                            }
+                        }
+                    }  
+                }
+            }
+        }
+        private int LevenshteinDistance(string inputPengguna, string hasilPencarian)
+        {
+            int panjangInputPengguna = inputPengguna.Length+1;
+            int panjangHasilPencarian = hasilPencarian.Length+1;
+            int[][] dp = new int[panjangInputPengguna][];
+
+            for (int i = 0; i < panjangInputPengguna; i++)
+            {
+                dp[i] = new int[panjangHasilPencarian];
+            }
+            for (int i = 0; i <= inputPengguna.Length; i++)
+            {
+                for (int j = 0; j <= hasilPencarian.Length; j++)
+                {
+                    if (i == 0)
+                    {
+                        dp[i][j] = j;
+                    }
+                    else if (j == 0)
+                    {
+                        dp[i][j] = i;
+                    }
+                    else
+                    {
+                        dp[i][j] = Math.Min(
+                            dp[i - 1][j - 1] + (inputPengguna.ElementAt(i - 1) == hasilPencarian.ElementAt(j - 1) ? 0 : 1),
+                            Math.Min(dp[i - 1][j] + 1, dp[i][j - 1] + 1)
+                        );
+                    }
+                }
+            }
+
+            return dp[inputPengguna.Length][hasilPencarian.Length];
         }
     }
     public class DataCariPekerjaan

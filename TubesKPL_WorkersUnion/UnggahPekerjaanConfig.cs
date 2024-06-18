@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using TubesKPL_WorkersUnion;
+using MySql.Data.MySqlClient;
 using static TubesKPL_WorkersUnion.AturGajiPekerjaan;
 
 
@@ -39,6 +40,7 @@ namespace TubesKPL_WorkersUnion
                 WriteIndented = true
             };
             string tulisan = JsonSerializer.Serialize(listPengguna, options);
+            LoginConfig loginConfig = new LoginConfig();
             File.WriteAllText(filepath, tulisan);
         }
 
@@ -92,6 +94,7 @@ namespace TubesKPL_WorkersUnion
                     dataLamaran.idPekerjaan = idPekerjaan;
                     dataLamaran.statusLamaran = "pending";
                     dataLamaran.jawaban = jawaban;
+                    obj.pengguna[i].pekerja.Status = State.searching;
                     obj.pengguna[i].pekerja.lamaranDikirim.Add(dataLamaran);
                     for (int j = 0; j < obj.pengguna.Count; j++)
                     {
@@ -125,6 +128,7 @@ namespace TubesKPL_WorkersUnion
                 if (obj.pengguna[i].pekerja.idPekerja == idPekerja)
                 {
                     found = true;
+                    dataCv.idCv = "CV"+idPekerja.Substring(2);
                     obj.pengguna[i].pekerja.Cv= dataCv;
                 }
             }
@@ -227,7 +231,79 @@ namespace TubesKPL_WorkersUnion
             }
             return null;
         }
+        public void TerimaOrTolakPekerja(string idPekerja, string idPekerjaan,bool terima)
+        {
+            LoginConfig loginConfig = new LoginConfig();
+            loginConfig.ReadConfigFile();
+            Config obj = ReadConfigFile<Config>();
+            Pekerja pekerjaYangDiubah;
+            Perusahaan perusahaanYangDiubah;
+            Lamaran lamaranYangDihapus=new Lamaran();
+            string idLamaran = "";
+            bool found = false;
+            bool found2 = false;
+            for (int j = 0; j < obj.pengguna.Count && !found; j++)
+            {
+                if (obj.pengguna[j].pekerja.idPekerja == idPekerja)
+                {
+                    found = true;
+                    for (int k = 0; k < obj.pengguna[j].pekerja.lamaranDikirim.Count && !found2; k++)
+                    {
+                        if (obj.pengguna[j].pekerja.lamaranDikirim[k].idPekerjaan == idPekerjaan)
+                        {
+                            pekerjaYangDiubah = obj.pengguna[j].pekerja;
+                            if (terima)
+                            {
+                                pekerjaYangDiubah.Status = State.employed;
+                                pekerjaYangDiubah.lamaranDikirim[k].statusLamaran = "diterima";
+                            }
+                            else
+                            {
+                                pekerjaYangDiubah.lamaranDikirim[k].statusLamaran = "ditolak";
+                            }
+                            lamaranYangDihapus = pekerjaYangDiubah.lamaranDikirim[k];
+                            idLamaran = pekerjaYangDiubah.lamaranDikirim[k].idLamaran;
+                            obj.pengguna[j].pekerja = pekerjaYangDiubah;
+                            found2 = true;
+                        }
+                    }
 
+                }
+            }
+            found = false;
+            found2 = false;
+            bool found3 = false;
+            for (int j = 0;j < obj.pengguna.Count && !found; j++)
+            {
+                if (obj.pengguna[j].perusahaan.idPerusahaan == "PR" + idPekerjaan.Substring(3, 7))
+                {
+                    found = true;
+                    for (int k = 0; k < obj.pengguna[j].perusahaan.postinganPekerjaan.Count && !found2; k++)
+                    {
+                        if (obj.pengguna[j].perusahaan.postinganPekerjaan[k].idPekerjaan == idPekerjaan)
+                        {
+                            perusahaanYangDiubah = obj.pengguna[j].perusahaan;
+                            if (terima)
+                            {
+                                perusahaanYangDiubah.jumlahEmployee++;
+                            }
+                            for (int l = 0;l < obj.pengguna[j].perusahaan.postinganPekerjaan[k].lamaranDiterima.Count && !found3; l++)
+                            {
+                                if (obj.pengguna[j].perusahaan.postinganPekerjaan[k].lamaranDiterima[l].idLamaran == idLamaran)
+                                {
+                                    perusahaanYangDiubah.postinganPekerjaan[k].lamaranDiterima.RemoveAt(l);
+                                    found3 = true;
+                                }
+                            }
+                            obj.pengguna[j].perusahaan = perusahaanYangDiubah;
+                            found2 = true;
+                        }
+                    }
+                }
+            }
+            listPengguna = obj;
+            WriteConfigFile();
+        }
         public void Register(string fullname, string username, string email, string password)
         {
             Config obj = ReadConfigFile<Config>();

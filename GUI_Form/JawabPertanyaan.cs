@@ -55,9 +55,7 @@ namespace GUI_Form
                 config.TambahLamaran(logged_in.idPekerja, this.idPekerjaan, idCv, base64String);
                 found = false;
             }
-            HalamanUtama halamanUtama = new HalamanUtama();
-            halamanUtama.Show();
-            this.Hide();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -90,6 +88,13 @@ namespace GUI_Form
         {
             CariPekerjaan halamanCariPekerjaan = new CariPekerjaan();
             halamanCariPekerjaan.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HalamanUtama halamanUtama = new HalamanUtama();
+            halamanUtama.Show();
             this.Hide();
         }
     }

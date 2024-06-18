@@ -71,6 +71,7 @@
             button1.TabIndex = 48;
             button1.Text = "Kirim Lamaran";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button7
             // 

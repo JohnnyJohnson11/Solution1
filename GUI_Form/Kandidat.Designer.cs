@@ -49,6 +49,8 @@
             label12 = new Label();
             label13 = new Label();
             button4 = new Button();
+            label14 = new Label();
+            label15 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -106,6 +108,7 @@
             button3.TabIndex = 33;
             button3.Text = "Terima";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button1
             // 
@@ -118,6 +121,7 @@
             button1.TabIndex = 34;
             button1.Text = "Tolak";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label3
             // 
@@ -272,11 +276,34 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(221, 381);
+            label14.Name = "label14";
+            label14.Size = new Size(63, 23);
+            label14.TabIndex = 96;
+            label14.Text = "Status";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.Location = new Point(374, 381);
+            label15.Name = "label15";
+            label15.Size = new Size(74, 23);
+            label15.TabIndex = 97;
+            label15.Text = "(status)";
+            label15.Click += label15_Click;
+            // 
             // Kandidat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(label15);
+            Controls.Add(label14);
             Controls.Add(button4);
             Controls.Add(label13);
             Controls.Add(label10);
@@ -326,5 +353,7 @@
         private Label label12;
         private Label label13;
         private Button button4;
+        private Label label14;
+        private Label label15;
     }
 }

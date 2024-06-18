@@ -187,6 +187,7 @@
             button3.TabIndex = 54;
             button3.Text = "Cari";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label2
             // 
