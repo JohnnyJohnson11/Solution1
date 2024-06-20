@@ -73,10 +73,18 @@ namespace GUI_Form
             {
                 gaji = gaji + "/Bulan";
             }
-            Logged_In logged_In = Logged_In.GetInstance("", "");
-            Pertanyaan halamanPertanyaan = new Pertanyaan(logged_In.idPerusahaan, judul, lokasi, gaji, deskripsi);
-            halamanPertanyaan.Show();
-            this.Hide();
+
+            if (textBox1.Text == "" || textBox2.Text=="")
+            {
+                MessageBox.Show("Judul pekerjaan atau gaji tidak boleh kosong");
+            }
+            else
+            {
+                Logged_In logged_In = Logged_In.GetInstance("", "");
+                Pertanyaan halamanPertanyaan = new Pertanyaan(logged_In.idPerusahaan, judul, lokasi, gaji, deskripsi);
+                halamanPertanyaan.Show();
+                this.Hide();
+            }         
         }
 
         private void label6_Click(object sender, EventArgs e)
