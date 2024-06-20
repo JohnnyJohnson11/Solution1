@@ -92,14 +92,14 @@ namespace GUI_Form
                         label10.Text = loginConfig.ListPengguna.pengguna[j].pekerja.noTelepon;
                         if (loginConfig.ListPengguna.pengguna[j].pekerja.Status == State.searching)
                         {
-                            label11.Text = "Mencari Pekerjaan";
+                            label15.Text = "Mencari Pekerjaan";
                         } else if (loginConfig.ListPengguna.pengguna[j].pekerja.Status == State.unemployed)
                         {
-                            label11.Text = "Tidak memiliki pekerjaan";
+                            label15.Text = "Tidak memiliki pekerjaan";
                         }
                         else if (loginConfig.ListPengguna.pengguna[j].pekerja.Status == State.unemployed)
                         {
-                            label11.Text = "Sudah memiliki pekerjaan";
+                            label15.Text = "Sudah memiliki pekerjaan";
                         }
                         found = true;
                     }

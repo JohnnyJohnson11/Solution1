@@ -32,7 +32,8 @@ namespace GUI_Form
                     if (loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan != null)
                     {
                         judulPekerjaan.Add(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan);
-                        data = new DataCariPekerjaan(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].idPekerjaan, loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan);
+                        data = new DataCariPekerjaan(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].idPekerjaan, 
+                            loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan);
                         dataCariPekerjaan.Add(data);
                     }
                 }

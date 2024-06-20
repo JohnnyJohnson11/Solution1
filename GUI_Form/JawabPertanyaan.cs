@@ -74,7 +74,9 @@ namespace GUI_Form
                         {
                             string fileJawaban = loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].pertanyaan;
                             byte[] fileBytes = Convert.FromBase64String(fileJawaban);
-                            string outputFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Pertanyaan lamaran pekerjaan " + loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan + " Perusahaan " + loginConfig.ListPengguna.pengguna[i].perusahaan.Nama);
+                            string outputFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), 
+                                "Pertanyaan lamaran pekerjaan " + loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan + 
+                                " Perusahaan " + loginConfig.ListPengguna.pengguna[i].perusahaan.Nama);
                             File.WriteAllBytes(outputFilePath, fileBytes);
 
                             MessageBox.Show($"File data loaded and saved as {outputFilePath}");
