@@ -31,5 +31,12 @@ namespace GUI_Form
             halamanProfilPerusahaan.Show();
             this.Hide();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            HalamanUtama halamanUtama = new HalamanUtama();
+            halamanUtama.Show();
+            this.Hide();
+        }
     }
 }

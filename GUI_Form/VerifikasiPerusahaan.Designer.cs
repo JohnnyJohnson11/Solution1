@@ -56,6 +56,7 @@
             button7.TabIndex = 83;
             button7.Text = "<";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // label2
             // 
@@ -144,6 +145,7 @@
             button1.TabIndex = 95;
             button1.Text = "Minta Verifikasi";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label4
             // 
@@ -172,7 +174,7 @@
             richTextBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             richTextBox1.Location = new Point(292, 340);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.ReadOnly = true;
+            richTextBox1.ReadOnly = false;
             richTextBox1.Size = new Size(450, 141);
             richTextBox1.TabIndex = 98;
             richTextBox1.Text = "";

@@ -304,6 +304,42 @@ namespace TubesKPL_WorkersUnion
             listPengguna = obj;
             WriteConfigFile();
         }
+        public void ubahStatus(string idPerusahaan, string perubahan)
+        {
+            LoginConfig loginConfig = new LoginConfig();
+            loginConfig.ReadConfigFile();
+            Config obj = ReadConfigFile<Config>();
+            if (perubahan == "terima")
+            {
+                for (int i = 0; i < obj.pengguna.Count; i++)
+                {
+                    if (obj.pengguna[i].perusahaan.idPerusahaan == idPerusahaan)
+                    {
+                        obj.pengguna[i].perusahaan.Status = StatusPerusahaan.Disetujui;
+                    }
+                }
+            } else if (perubahan == "tolak")
+            {
+                for (int i = 0; i < obj.pengguna.Count; i++)
+                {
+                    if (obj.pengguna[i].perusahaan.idPerusahaan == idPerusahaan)
+                    {
+                        obj.pengguna[i].perusahaan.Status = StatusPerusahaan.Ditolak;
+                    }
+                }
+            } else
+            {
+                for (int i = 0; i < obj.pengguna.Count; i++)
+                {
+                    if (obj.pengguna[i].perusahaan.idPerusahaan == idPerusahaan)
+                    {
+                        obj.pengguna[i].perusahaan.Status = StatusPerusahaan.MemasukkanInfoPerusahaan;
+                    }
+                }
+            }
+            listPengguna = obj;
+            WriteConfigFile();
+        }
         public void Register(string fullname, string username, string email, string password)
         {
             Config obj = ReadConfigFile<Config>();

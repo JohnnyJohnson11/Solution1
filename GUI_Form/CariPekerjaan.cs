@@ -83,36 +83,42 @@ namespace GUI_Form
             string inputPengguna = textBox1.Text;
             LoginConfig loginConfig = new LoginConfig();
             DataCariPekerjaan data;
+            List<string> judulPekerjaan = new List<string>();
             loginConfig.ReadConfigFile();
             string kataDicari;
             List<string> hasilPencarian = new List<string>();
             char[] whitespace = new char[] { ' ', '\t' };
             bool verified;
             bool found;
-            for (int i=0;i<loginConfig.ListPengguna.pengguna.Count; i++)
+            for (int i = 0; i < loginConfig.ListPengguna.pengguna.Count; i++)
             {
-                for (int j=0; j < loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan.Count; j++)
+                for (int j = 0; j < loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan.Count; j++)
                 {
                     verified = false;
                     found = false;
                     string[] pisahKata = loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan.Split(whitespace);
                     for (int l = 0; l < pisahKata.Length; l++)
                     {
-                        kataDicari = "";
+                        kataDicari = null;
                         for (int k = l; k < pisahKata.Length && !verified; k++)
                         {
                             kataDicari = kataDicari + " " + pisahKata[k];
-                            if (LevenshteinDistance(inputPengguna, kataDicari) <= 2)
+                            if (LevenshteinDistance(inputPengguna, kataDicari) <= kataDicari.Length * 2 / 4)
                             {
                                 hasilPencarian.Add(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan);
                                 data = new DataCariPekerjaan(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].idPekerjaan, loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan);
                                 dataCariPekerjaan.Add(data);
+                                judulPekerjaan.Add(loginConfig.ListPengguna.pengguna[i].perusahaan.postinganPekerjaan[j].judulPekerjaan);
                                 verified = true;
                             }
                         }
-                    }  
+                    }
                 }
             }
+            listBox1.DataSource = judulPekerjaan;
+            richTextBox2.Text = "";
+            richTextBox3.Text = "";
+            richTextBox1.Text = "";
         }
         private int LevenshteinDistance(string inputPengguna, string hasilPencarian)
         {

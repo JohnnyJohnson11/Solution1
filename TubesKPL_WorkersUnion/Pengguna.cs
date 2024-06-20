@@ -61,7 +61,7 @@ public class Perusahaan
         this.Email = "";
         this.NomorTelepon = "";
         this.Deskripsi = "";
-        this.Status = StatusPerusahaan.MemasukkanInfoPerusahaan;
+        this.Status = StatusPerusahaan.Ditolak;
     }
     public void TambahDataPerusahaan(string nama, string email, string nomorTelepon, string deskripsi)
     {
@@ -69,7 +69,6 @@ public class Perusahaan
         this.Email = email;
         this.NomorTelepon = nomorTelepon;
         this.Deskripsi = deskripsi;
-        this.Status = StatusPerusahaan.MemasukkanInfoPerusahaan;
     }
 }
 public class Pekerja
@@ -136,5 +135,32 @@ public class Config
     public Config()
     {
         this.pengguna = new List<Pengguna>();
+    }
+}
+public class Verifikasi_Config
+{
+    public List<Verifikasi> verifikasi { get; set; }
+    public Verifikasi_Config()
+    {
+        this.verifikasi = new List<Verifikasi>();
+    }
+}
+public class Verifikasi
+{
+    public string idPerusahaan { get; set; }
+    public string kategoriPerusahaan { get; set; }
+    public string tanggalPerusahaan { get; set; }
+    public string asetPerusahaan { get; set; }
+    public string alamatPerusahaan { get; set; }
+    public Verifikasi(string idPerusahaan)
+    {
+        this.idPerusahaan=idPerusahaan;
+    }
+    public void tambahDataVerifikasi(string kategori, string tanggal, string aset, string alamat)
+    {
+        this.kategoriPerusahaan = kategori;
+        this.tanggalPerusahaan =tanggal;
+        this.asetPerusahaan=aset;
+        this.alamatPerusahaan=alamat;
     }
 }

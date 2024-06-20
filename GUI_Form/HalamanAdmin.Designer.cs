@@ -30,13 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HalamanAdmin));
             pictureBox1 = new PictureBox();
-            richTextBox2 = new RichTextBox();
             listBox1 = new ListBox();
             label2 = new Label();
             label4 = new Label();
             button1 = new Button();
             button3 = new Button();
             button5 = new Button();
+            label10 = new Label();
+            label9 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label7 = new Label();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -49,15 +56,6 @@
             pictureBox1.TabIndex = 82;
             pictureBox1.TabStop = false;
             // 
-            // richTextBox2
-            // 
-            richTextBox2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBox2.Location = new Point(284, 118);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(420, 378);
-            richTextBox2.TabIndex = 84;
-            richTextBox2.Text = "";
-            // 
             // listBox1
             // 
             listBox1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -67,6 +65,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(212, 378);
             listBox1.TabIndex = 83;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -91,7 +90,6 @@
             label4.Size = new Size(596, 25);
             label4.TabIndex = 97;
             label4.Text = "Berikut adalah list perusahaan yang memerlukan tindakan";
-            label4.Click += this.label4_Click;
             // 
             // button1
             // 
@@ -104,6 +102,7 @@
             button1.TabIndex = 99;
             button1.Text = "Tolak";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button3
             // 
@@ -115,6 +114,7 @@
             button3.TabIndex = 98;
             button3.Text = "Terima";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button5
             // 
@@ -127,18 +127,106 @@
             button5.TabIndex = 100;
             button5.Text = "Log Out";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(456, 314);
+            label10.Name = "label10";
+            label10.Size = new Size(81, 23);
+            label10.TabIndex = 109;
+            label10.Text = "(alamat)";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(456, 253);
+            label9.Name = "label9";
+            label9.Size = new Size(59, 23);
+            label9.TabIndex = 108;
+            label9.Text = "(aset)";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(456, 187);
+            label11.Name = "label11";
+            label11.Size = new Size(86, 23);
+            label11.TabIndex = 107;
+            label11.Text = "(tanggal)";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(456, 120);
+            label12.Name = "label12";
+            label12.Size = new Size(95, 23);
+            label12.TabIndex = 106;
+            label12.Text = "(kategori)";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(303, 314);
+            label6.Name = "label6";
+            label6.Size = new Size(78, 23);
+            label6.TabIndex = 105;
+            label6.Text = "Alamat:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(303, 253);
+            label5.Name = "label5";
+            label5.Size = new Size(56, 23);
+            label5.TabIndex = 104;
+            label5.Text = "Aset:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(303, 187);
+            label7.Name = "label7";
+            label7.Size = new Size(83, 23);
+            label7.TabIndex = 103;
+            label7.Text = "Tanggal:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(303, 120);
+            label8.Name = "label8";
+            label8.Size = new Size(91, 23);
+            label8.TabIndex = 102;
+            label8.Text = "Kategori:";
             // 
             // HalamanAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label11);
+            Controls.Add(label12);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label7);
+            Controls.Add(label8);
             Controls.Add(button5);
             Controls.Add(button1);
             Controls.Add(button3);
             Controls.Add(label4);
             Controls.Add(label2);
-            Controls.Add(richTextBox2);
             Controls.Add(listBox1);
             Controls.Add(pictureBox1);
             Name = "HalamanAdmin";
@@ -151,12 +239,19 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private RichTextBox richTextBox2;
         private ListBox listBox1;
         private Label label2;
         private Label label4;
         private Button button1;
         private Button button3;
         private Button button5;
+        private Label label10;
+        private Label label9;
+        private Label label11;
+        private Label label12;
+        private Label label6;
+        private Label label5;
+        private Label label7;
+        private Label label8;
     }
 }

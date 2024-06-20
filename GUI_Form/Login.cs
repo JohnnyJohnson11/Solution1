@@ -68,6 +68,7 @@ namespace GUI_Form
             string password = textBox2.Text;
             LoginConfig loginConfig = new LoginConfig();
             loginConfig.ReadConfigFile();
+            VerifikasiConfig verifikasiConfig = new VerifikasiConfig();
             int i;
             for (i = 0; i < loginConfig.ListPengguna.pengguna.Count; i++)
             {
@@ -76,15 +77,24 @@ namespace GUI_Form
                     //Pindah ke menu utama
                     found = true;
                     Logged_In logged_In = Logged_In.ResetInstance(loginConfig.ListPengguna.pengguna[i].perusahaan.idPerusahaan, loginConfig.ListPengguna.pengguna[i].pekerja.idPekerja);
-                    MessageBox.Show(logged_In.idPerusahaan+"  "+logged_In.idPekerja);
-                    HalamanUtama halamanUtama = new HalamanUtama();
-                    halamanUtama.Show();
-                    this.Hide();
+                    if (loginConfig.ListPengguna.pengguna[0].perusahaan.idPerusahaan==logged_In.idPerusahaan && 
+                        loginConfig.ListPengguna.pengguna[0].pekerja.idPekerja== logged_In.idPekerja)
+                    {
+                        HalamanAdmin halamanAdmin= new HalamanAdmin();
+                        halamanAdmin.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        HalamanUtama halamanUtama = new HalamanUtama();
+                        halamanUtama.Show();
+                        this.Hide();
+                    }
                 }
             }
             if (!found)
             {
-                DialogResult result = MessageBox.Show(this, "Password tidak sesuai", "Wrong password", MessageBoxButtons.OK);
+                DialogResult result = MessageBox.Show(this, "Password atau email tidak sesuai", "Wrong password or email", MessageBoxButtons.OK);
             }
         }
     }

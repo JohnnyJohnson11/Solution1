@@ -42,6 +42,7 @@
             pictureBox3 = new PictureBox();
             button3 = new Button();
             button1 = new Button();
+            button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -195,11 +196,25 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // button7
+            // 
+            button7.BackColor = Color.Black;
+            button7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.ForeColor = SystemColors.ButtonFace;
+            button7.Location = new Point(12, 12);
+            button7.Name = "button7";
+            button7.Size = new Size(37, 29);
+            button7.TabIndex = 84;
+            button7.Text = "<";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
             // Perusahaan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 557);
+            Controls.Add(button7);
             Controls.Add(button1);
             Controls.Add(button3);
             Controls.Add(pictureBox3);
@@ -237,5 +252,6 @@
         private PictureBox pictureBox3;
         private Button button3;
         private Button button1;
+        private Button button7;
     }
 }
